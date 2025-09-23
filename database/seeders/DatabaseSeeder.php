@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use Database\Seeders\Api\BloodTypeSeeder;
 use Database\Seeders\Api\CitySeeder;
 use Database\Seeders\Api\GovernorateSeeder;
+use Database\Seeders\Api\SettingSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
       BloodTypeSeeder::class,
       GovernorateSeeder::class,
       CitySeeder::class,
+      SettingSeeder::class,
     ]);
   }
 }
