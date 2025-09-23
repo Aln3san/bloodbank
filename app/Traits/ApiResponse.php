@@ -24,4 +24,5 @@ trait ApiResponse
   {
     return $this->apiResponse($data, $message, $status);
   }
+  
 }
