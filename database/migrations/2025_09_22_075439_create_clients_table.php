@@ -20,6 +20,9 @@ class CreateClientsTable extends Migration
       $table->date('last_donation_date');
       $table->bigInteger('city_id')->unsigned();
       $table->timestamps();
+
+      $table->foreign('blood_type_id')->references('id')->on('blood_types')->onDelete('cascade');
+      $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
     });
   }
 

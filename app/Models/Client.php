@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Faker\Core\Blood;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Client extends Model 
+class Client extends Authenticatable
 {
+    use HasApiTokens;
 
     protected $table = 'clients';
     public $timestamps = true;
@@ -13,42 +16,42 @@ class Client extends Model
 
     public function bloodType()
     {
-        return $this->belongsTo('Client');
+        return $this->belongsTo(Client::class);
     }
 
     public function city()
     {
-        return $this->belongsTo('City');
+        return $this->belongsTo(City::class);
     }
 
     public function posts()
     {
-        return $this->belongsToMany('Post');
+        return $this->belongsToMany(Post::class);
     }
 
     public function contactMessages()
     {
-        return $this->hasMany('Contact');
+        return $this->hasMany(Contact::class);
     }
 
     public function notifications()
     {
-        return $this->belongsToMany('Notification');
+        return $this->belongsToMany(Notification::class);
     }
 
     public function donationRequestss()
     {
-        return $this->hasMany('DonationRequests');
+        return $this->hasMany(DonationRequest::class);
     }
 
     public function governorates()
     {
-        return $this->belongsToMany('Governorate');
+        return $this->belongsToMany(Governorate::class);
     }
 
     public function bloodTypes()
     {
-        return $this->belongsToMany('BloodType');
+        return $this->belongsToMany(BloodType::class);
     }
 
 }
