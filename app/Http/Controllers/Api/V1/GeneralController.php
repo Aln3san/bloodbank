@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\BloodType as BloodTypes;
 use App\Models\City;
+use App\Models\Contact;
 use App\Models\Governorate;
 use App\Models\Settings;
 use App\Traits\ApiResponse;
@@ -17,7 +18,7 @@ class GeneralController extends Controller
   public function bloodTypes()
   {
     $bloodTypes = BloodTypes::all();
-    $data = ['blood_types' => $bloodTypes];
+    $data = ['Blood_types' => $bloodTypes];
     return $this->successResponse($data, 'Get Blood Types api Successfully', 200);
   }
   // test
@@ -25,7 +26,7 @@ class GeneralController extends Controller
   public function governorates()
   {
     $governorates = Governorate::all();
-    $data = ['governorates' => $governorates];
+    $data = ['Governorates' => $governorates];
     return $this->successResponse($data, 'Get Governorates api Successfully', 200);
   }
 
@@ -36,13 +37,19 @@ class GeneralController extends Controller
         $query->where('governorate_id', $request->governorate_id);
       }
     })->get();
-    $data = ['cities' => $cities];
+    $data = ['Cities' => $cities];
     return $this->successResponse($data, 'Get Cities api Successfully', 200);
   }
 
   public function settings(){
     $settings = Settings::all();
-    $data = ['settings' => $settings];
+    $data = ['Settings' => $settings];
     return $this->successResponse($data, 'Get Settings api Successfully', 200);
+  }
+
+  public function contact(){
+    $contact = Contact::all();
+    $data = ['Contact' => $contact];
+    return $this->successResponse($data, 'Get Contact api Successfully', 200);
   }
 }
