@@ -27,6 +27,7 @@ Route::prefix('v1')->group(function () {
   Route::get('governorates', [GeneralController::class, 'governorates']);
   Route::get('cities', [GeneralController::class, 'cities']);
   Route::get('settings', [GeneralController::class, 'settings']);
+  Route::get('contact', [GeneralController::class, 'contact']);
 
   // Routes for AuthController
   Route::post('register', [AuthController::class, 'register']);

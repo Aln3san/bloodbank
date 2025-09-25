@@ -13,10 +13,10 @@ class ContactSeeder extends Seeder
    */
   public function run(): void
   {
-    DB::table('contacts')->insert([
+    DB::table('contactus')->insert([
       [
         'subject' => 'you must improve your app',
-        'massege' => 'your app is very good but you must improve it more and more',
+        'message' => 'your app is very good but you must improve it more and more',
         'client_id' => 1,
         'created_at' => now(),
         'updated_at' => now()

@@ -4,9 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Contact;
 use Database\Seeders\Api\BloodTypeSeeder;
 use Database\Seeders\Api\CategorySeeder;
 use Database\Seeders\Api\CitySeeder;
+use Database\Seeders\Api\ContactSeeder;
 use Database\Seeders\Api\GovernorateSeeder;
 use Database\Seeders\Api\PostSeeder;
 use Database\Seeders\Api\SettingSeeder;
@@ -33,6 +35,7 @@ class DatabaseSeeder extends Seeder
       SettingSeeder::class,
       CategorySeeder::class,
       PostSeeder::class,
+      ContactSeeder::class,
     ]);
   }
 }

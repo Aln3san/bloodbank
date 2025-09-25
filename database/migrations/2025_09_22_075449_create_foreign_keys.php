@@ -34,11 +34,6 @@ class CreateForeignKeys extends Migration {
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
-		Schema::table('contactus', function(Blueprint $table) {
-			$table->foreign('client_id')->references('id')->on('clients')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-		});
 		Schema::table('notifications', function(Blueprint $table) {
 			$table->foreign('donation_request_id')->references('id')->on('donation_requests')
 						->onDelete('restrict')
@@ -82,9 +77,6 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('donation_requests', function(Blueprint $table) {
 			$table->dropForeign('donation_requests_client_id_foreign');
-		});
-		Schema::table('contactus', function(Blueprint $table) {
-			$table->dropForeign('contactus_client_id_foreign');
 		});
 		Schema::table('notifications', function(Blueprint $table) {
 			$table->dropForeign('notifications_donation_request_id_foreign');
