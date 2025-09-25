@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\GeneralController;
 use App\Http\Controllers\Api\V1\NotificationController;
 use App\Http\Controllers\Api\V1\PostController;
+use App\Http\Controllers\Api\V1\ProfileController;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +39,10 @@ Route::prefix('v1')->group(function () {
     // Posts Routes
     Route::get('posts', [PostController::class, 'posts']);
     Route::get('post/{id}', [PostController::class, 'post']);
-    // Notifications Routes
+    // Notifications Route
     Route::get('notifications', [NotificationController::class, 'notifications']);
+    // Profile Routes
+    Route::get('profile', [ProfileController::class, 'showProfile']);
+    Route::post('update-profile', [ProfileController::class, 'updateProfile']);
   });
 });
