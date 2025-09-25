@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\GeneralController;
+use App\Http\Controllers\Api\V1\NotificationController;
 use App\Http\Controllers\Api\V1\PostController;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +35,10 @@ Route::prefix('v1')->group(function () {
   Route::post('register', [AuthController::class, 'register']);
   Route::post('login', [AuthController::class, 'login']);
   Route::group(['middleware' => 'auth:api'], function() {
+    // Posts Routes
     Route::get('posts', [PostController::class, 'posts']);
     Route::get('post/{id}', [PostController::class, 'post']);
+    // Notifications Routes
+    Route::get('notifications', [NotificationController::class, 'notifications']);
   });
 });

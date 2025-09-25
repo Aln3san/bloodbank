@@ -9,7 +9,9 @@ use Database\Seeders\Api\BloodTypeSeeder;
 use Database\Seeders\Api\CategorySeeder;
 use Database\Seeders\Api\CitySeeder;
 use Database\Seeders\Api\ContactSeeder;
+use Database\Seeders\Api\DonationRequestSeeder;
 use Database\Seeders\Api\GovernorateSeeder;
+use Database\Seeders\Api\NotificationSeeder;
 use Database\Seeders\Api\PostSeeder;
 use Database\Seeders\Api\SettingSeeder;
 use Illuminate\Database\Seeder;
@@ -36,6 +38,8 @@ class DatabaseSeeder extends Seeder
       CategorySeeder::class,
       PostSeeder::class,
       ContactSeeder::class,
+      NotificationSeeder::class,
+      DonationRequestSeeder::class,
     ]);
   }
 }
