@@ -8,6 +8,7 @@ class City extends Model
 {
 
     protected $table = 'cities';
+    protected $fillable = array('name', 'governorate_id');
     public $timestamps = true;
 
     public function governorate()

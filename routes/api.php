@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\DonationRequestController;
 use App\Http\Controllers\Api\V1\GeneralController;
 use App\Http\Controllers\Api\V1\NotificationController;
 use App\Http\Controllers\Api\V1\PostController;
 use App\Http\Controllers\Api\V1\ProfileController;
+use App\Http\Controllers\Api\V1\ResetPasswordController;
+use App\Models\DonationRequest;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +38,7 @@ Route::prefix('v1')->group(function () {
   // Routes for AuthController
   Route::post('register', [AuthController::class, 'register']);
   Route::post('login', [AuthController::class, 'login']);
+  Route::post('forgot-password', [ResetPasswordController::class, 'forgotPassword']);
   Route::group(['middleware' => 'auth:api'], function() {
     // Posts Routes
     Route::get('posts', [PostController::class, 'posts']);
@@ -44,5 +48,8 @@ Route::prefix('v1')->group(function () {
     // Profile Routes
     Route::get('profile', [ProfileController::class, 'showProfile']);
     Route::post('update-profile', [ProfileController::class, 'updateProfile']);
+    // Donation Requests Routes
+    Route::get('donation-requests', [DonationRequestController::class, 'index']);
+    Route::post('donation-request', [DonationRequestController::class, 'store']);
   });
 });
