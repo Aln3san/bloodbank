@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\DonationRequestController;
+use App\Http\Controllers\Api\V1\FavouretController;
 use App\Http\Controllers\Api\V1\GeneralController;
 use App\Http\Controllers\Api\V1\NotificationController;
 use App\Http\Controllers\Api\V1\PostController;
@@ -49,6 +50,10 @@ Route::prefix('v1')->group(function () {
     // Profile Routes
     Route::get('profile', [ProfileController::class, 'showProfile']);
     Route::post('update-profile', [ProfileController::class, 'updateProfile']);
+    // Favourites Routes
+    Route::get('favourites', [FavouretController::class, 'listFavourites']);
+    Route::post('toggle-favourite/{id}', [FavouretController::class, 'toggleFavourite']);
+    // Register Token Route
     // Donation Requests Routes
     Route::get('donation-requests', [DonationRequestController::class, 'index']);
     Route::post('donation-request', [DonationRequestController::class, 'store']);

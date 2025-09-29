@@ -19,12 +19,18 @@ class DonationRequestController extends Controller
     return $this->successResponse($data, 'Donation Requests Fetched Successfully');
   }
 
-  public function store(ApiDonationRequest $request){
-    $donationRequest['client_id'] = auth()->user()->id;
-    $donationRequest = DonationRequest::create($request->validated());
+  public function show($id){
+    $donationRequest = DonationRequest::with('city', 'bloodType')->find($id);
+    if(!$donationRequest){
+      return $this->errorResponse('Donation Request Not Found', 404);
+    }
     $data = [
       'donation_request' => $donationRequest,
     ];
-    return $this->successResponse($data, 'Donation Request Created Successfully');
+    return $this->successResponse($data, 'Donation Request Fetched Successfully');
+  }
+
+  public function createDonation(ApiDonationRequest $request){
+    $donationReqeust = $request->user->donationRequests()->create($request->validated());
   }
 }

@@ -32,7 +32,6 @@ class DonationRequest extends FormRequest
       'city_id' => 'required|exists:cities,id',
       'patient_phone' => 'required|string|max:20',
       'notes' => 'nullable|string',
-      'client_id' => 'required|exists:clients,id',
     ];
   }
 }

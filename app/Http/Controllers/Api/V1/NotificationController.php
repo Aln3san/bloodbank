@@ -12,7 +12,7 @@ class NotificationController extends Controller
   use ApiResponse;
 
   public function notifications(){
-    $notifications = Notification::all();
+    $notifications = auth()->user()->notifications()->get();
     $data = [
       'Notifications' => $notifications
     ];

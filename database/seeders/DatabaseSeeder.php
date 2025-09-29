@@ -10,6 +10,7 @@ use Database\Seeders\Api\CategorySeeder;
 use Database\Seeders\Api\CitySeeder;
 use Database\Seeders\Api\ContactSeeder;
 use Database\Seeders\Api\DonationRequestSeeder;
+use Database\Seeders\Api\FavouritesSeeder;
 use Database\Seeders\Api\GovernorateSeeder;
 use Database\Seeders\Api\NotificationSeeder;
 use Database\Seeders\Api\PostSeeder;
@@ -40,6 +41,7 @@ class DatabaseSeeder extends Seeder
       ContactSeeder::class,
       NotificationSeeder::class,
       DonationRequestSeeder::class,
+      FavouritesSeeder::class,
     ]);
   }
 }

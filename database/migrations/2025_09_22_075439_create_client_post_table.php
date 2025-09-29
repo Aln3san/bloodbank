@@ -10,8 +10,8 @@ class CreateClientPostTable extends Migration {
 	{
 		Schema::create('client_post', function(Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->bigInteger('client_id')->unique()->unsigned();
-			$table->bigInteger('post_id')->unique()->unsigned();
+			$table->bigInteger('client_id')->unsigned();
+			$table->bigInteger('post_id')->unsigned();
 			$table->timestamps();
 		});
 	}
