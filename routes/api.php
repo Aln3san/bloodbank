@@ -39,6 +39,7 @@ Route::prefix('v1')->group(function () {
   Route::post('register', [AuthController::class, 'register']);
   Route::post('login', [AuthController::class, 'login']);
   Route::post('forgot-password', [ResetPasswordController::class, 'forgotPassword']);
+  Route::post('reset-password', [ResetPasswordController::class, 'resetPassword']);
   Route::group(['middleware' => 'auth:api'], function() {
     // Posts Routes
     Route::get('posts', [PostController::class, 'posts']);
