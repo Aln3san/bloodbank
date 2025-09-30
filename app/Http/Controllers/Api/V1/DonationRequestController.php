@@ -33,4 +33,8 @@ class DonationRequestController extends Controller
   public function createDonation(ApiDonationRequest $request){
     $donationReqeust = $request->user->donationRequests()->create($request->validated());
   }
+
+  public function store(){
+    //
+  }
 }
