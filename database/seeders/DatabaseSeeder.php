@@ -13,6 +13,7 @@ use Database\Seeders\Api\DonationRequestSeeder;
 use Database\Seeders\Api\FavouritesSeeder;
 use Database\Seeders\Api\GovernorateSeeder;
 use Database\Seeders\Api\NotificationSeeder;
+use Database\Seeders\Api\NotificationSettingsSeeder;
 use Database\Seeders\Api\PostSeeder;
 use Database\Seeders\Api\SettingSeeder;
 use Illuminate\Database\Seeder;
@@ -42,6 +43,7 @@ class DatabaseSeeder extends Seeder
       NotificationSeeder::class,
       DonationRequestSeeder::class,
       FavouritesSeeder::class,
+      NotificationSettingsSeeder::class,
     ]);
   }
 }

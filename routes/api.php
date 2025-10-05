@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\V1\DonationRequestController;
 use App\Http\Controllers\Api\V1\FavouretController;
 use App\Http\Controllers\Api\V1\GeneralController;
 use App\Http\Controllers\Api\V1\NotificationController;
+use App\Http\Controllers\Api\V1\NotificationSettingController;
 use App\Http\Controllers\Api\V1\PostController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\V1\ResetPasswordController;
@@ -47,6 +48,7 @@ Route::prefix('v1')->group(function () {
     Route::get('post/{id}', [PostController::class, 'post']);
     // Notifications Route
     Route::get('notifications', [NotificationController::class, 'notifications']);
+    Route::post('notification-settings', [NotificationSettingController::class, 'index']);
     // Profile Routes
     Route::get('profile', [ProfileController::class, 'showProfile']);
     Route::post('update-profile', [ProfileController::class, 'updateProfile']);

@@ -4,21 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model 
+class Post extends Model
 {
 
-    protected $table = 'posts';
-    public $timestamps = true;
-    protected $fillable = array('title', 'content', 'photo', 'category_id');
+  protected $table = 'posts';
+  public $timestamps = true;
+  protected $fillable = array('title', 'content', 'photo', 'category_id');
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 
-    public function clients()
-    {
-        return $this->belongsToMany(Client::class);
-    }
-
+  public function clients()
+  {
+    return $this->belongsToMany(Client::class);
+  }
 }
