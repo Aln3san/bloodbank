@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\DonationRequest as ApiDonationRequest;
+use App\Models\Client;
 use App\Models\DonationRequest;
 use App\Traits\ApiResponse;;
 use Illuminate\Http\Request;
@@ -29,12 +30,25 @@ class DonationRequestController extends Controller
     ];
     return $this->successResponse($data, 'Donation Request Fetched Successfully');
   }
+  
+  public function store(ApiDonationRequest $request){
+    $donationRequest = $request->user()->donationRequests()->create($request->validated());
 
-  public function createDonation(ApiDonationRequest $request){
-    $donationReqeust = $request->user->donationRequests()->create($request->validated());
-  }
+    // send notification according to notification settings
+    $clients = Client::whereHas('bloodTypes', function($query) use ($donationRequest) {
+      $query->where('blood_type_id', $donationRequest->blood_type_id);
+    })->whereHas('governorates', function ($query) use ($donationRequest){
+      $query->where('governorate_id', $donationRequest->governorate_id);
+    })->pluck('id')->toArray();
 
-  public function store(){
-    //
+    // create notification
+    $notification  = $donationRequest->notifications()->create([
+      'title' => 'New Donation Request',
+      'message' => 'A new donation request has been created in your area.',
+    ]);
+
+    if (!empty($clients)) {
+      $notification->clients()->attach($clients);
+    }
   }
 }
