@@ -49,6 +49,13 @@ class DonationRequestController extends Controller
 
     if (!empty($clients)) {
       $notification->clients()->attach($clients);
+
+      // push fcm notification
     }
+
+    $data = [
+      'donation_request' => $donationRequest,
+    ];
+    return $this->successResponse($data, 'Donation Request Created Successfully', 201);
   }
 }

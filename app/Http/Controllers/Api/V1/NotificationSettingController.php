@@ -11,33 +11,6 @@ class NotificationSettingController extends Controller
 {
   use ApiResponse;
 
-  // public function index(NotificationSettingRequest $request)
-  // {
-  //   $client = auth('api')->user();
-
-  //   //  dd($client->bloodTypes->pluck('name'));
-
-
-  //   if (!$client) {
-  //     return $this->errorResponse('Unauthenticated', 401);
-  //   }
-
-  //   if ($request->has('governorates')) {
-  //     $client->governorates()->sync($request->governorates);
-  //   }
-
-  //   if ($request->has('categories')) {
-  //     $client->categories()->sync($request->categories);
-  //   }
-
-  //   $data = [
-  //     'governorates' => $client->governorates->pluck('name'),
-  //     'categories' => $client->categories->pluck('name'),
-  //   ];
-
-  //   return $this->successResponse($data, 'Notification settings updated successfully');
-  // }
-
   public function index(NotificationSettingRequest $request)
   {
     $client = auth('sanctum')->user() ?? auth()->user();
