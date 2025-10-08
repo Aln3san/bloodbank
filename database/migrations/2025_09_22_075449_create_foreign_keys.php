@@ -14,16 +14,6 @@ class CreateForeignKeys extends Migration {
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
-		Schema::table('client_post', function(Blueprint $table) {
-			$table->foreign('client_id')->references('id')->on('clients')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-		});
-		Schema::table('client_post', function(Blueprint $table) {
-			$table->foreign('post_id')->references('id')->on('posts')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-		});
 		Schema::table('client_governorate', function(Blueprint $table) {
 			$table->foreign('client_id')->references('id')->on('clients')
 						->onDelete('restrict')
@@ -40,12 +30,6 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('posts', function(Blueprint $table) {
 			$table->dropForeign('posts_category_id_foreign');
-		});
-		Schema::table('client_post', function(Blueprint $table) {
-			$table->dropForeign('client_post_client_id_foreign');
-		});
-		Schema::table('client_post', function(Blueprint $table) {
-			$table->dropForeign('client_post_post_id_foreign');
 		});
 		Schema::table('client_governorate', function(Blueprint $table) {
 			$table->dropForeign('client_governorate_client_id_foreign');

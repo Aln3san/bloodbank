@@ -10,7 +10,7 @@ class CreateClientsTable extends Migration
   public function up()
   {
     Schema::create('clients', function (Blueprint $table) {
-      $table->bigIncrements('id', true);
+      $table->bigIncrements('id');
       $table->string('name', 255);
       $table->bigInteger('phone')->unique();
       $table->string('password', 255);
@@ -28,6 +28,6 @@ class CreateClientsTable extends Migration
 
   public function down()
   {
-    Schema::drop('clients');
+    Schema::dropIfExists('client_post');
   }
 }
