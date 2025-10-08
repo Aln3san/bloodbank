@@ -55,7 +55,7 @@ Route::prefix('v1')->group(function () {
     // Favourites Routes
     Route::get('favourites', [FavouretController::class, 'listFavourites']);
     Route::post('toggle-favourite/{id}', [FavouretController::class, 'toggleFavourite']);
-    // Donation Requests Routes
+    // Donation Api Resource Routes
     Route::apiResource('donation-requests', DonationRequestController::class)->except(['update', 'destroy']);
   });
 });
