@@ -36,7 +36,7 @@ class Client extends Authenticatable
 
   public function notifications()
   {
-    return $this->belongsToMany(Notification::class);
+    return $this->hasMany(Notification::class);
   }
 
   public function donationRequests()

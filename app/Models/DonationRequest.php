@@ -25,4 +25,9 @@ class DonationRequest extends Model
   {
     return $this->belongsTo(Client::class);
   }
+
+  public function notifications()
+  {
+    return $this->morphMany(Notification::class, 'notifiable');
+  }
 }
