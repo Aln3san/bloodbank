@@ -20,6 +20,11 @@ class AuthController extends Controller
     $data['password'] = bcrypt($data['password']);
     $client = Client::create($data);
     $token = $client->createToken('ApiToken');
+    if ($request->filled('fcm_token')) {
+      $accessToken = $token->accessToken;
+      $accessToken->fcm_token = $request->fcm_token;
+      $accessToken->save();
+    }
     $data = [
       'client' => $client,
       'token' => $token->plainTextToken
