@@ -24,6 +24,7 @@ class LoginRequest extends FormRequest
     return [
       'phone' => 'required|exists:clients,phone',
       'password' => 'required|string|min:6|max:255',
+      'fcm_token' => 'nullable|string|max:255'
     ];
   }
 }
