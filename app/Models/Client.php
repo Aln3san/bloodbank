@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Faker\Core\Blood;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class Client extends Authenticatable
 {
-  use HasApiTokens;
+  use HasApiTokens, Notifiable;
 
   protected $table = 'clients';
   public $timestamps = true;
@@ -52,5 +53,26 @@ class Client extends Authenticatable
   public function bloodTypes()
   {
     return $this->belongsToMany(BloodType::class);
+  }
+
+  /**
+   * Specifies the user's FCM token
+   *
+   * @return string|array
+   */
+  public function routeNotificationForFcm()
+  {
+    return $this->fcm_token;
+  }
+
+
+  /**
+   * Get all of the device tokens for the client.
+   *
+   * @return array
+   */
+  public function getDeviceToken(): array
+  {
+    return $this->tokens()->pluck('fcm_token')->toArray();
   }
 }

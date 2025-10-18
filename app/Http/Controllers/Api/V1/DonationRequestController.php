@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\DonationRequest as ApiDonationRequest;
 use App\Models\Client;
 use App\Models\DonationRequest;
+use App\Notifications\DonationRequestCreated;
 use App\Traits\ApiResponse;;
 use Illuminate\Http\Request;
 
@@ -35,11 +36,13 @@ class DonationRequestController extends Controller
     $donationRequest = $request->user()->donationRequests()->create($request->validated());
 
     // send notification according to notification settings
-    $clients = Client::whereHas('bloodTypes', function($query) use ($donationRequest) {
+    $clientsQuery = Client::whereHas('bloodTypes', function($query) use ($donationRequest) {
       $query->where('blood_type_id', $donationRequest->blood_type_id);
     })->whereHas('governorates', function ($query) use ($donationRequest){
       $query->where('governorate_id', $donationRequest->governorate_id);
-    })->pluck('id')->toArray();
+    });
+
+    $clientsIds = $clientsQuery->pluck('id')->toArray();
 
     // create notification
     $notification  = $donationRequest->notifications()->create([
@@ -49,11 +52,13 @@ class DonationRequestController extends Controller
     ]);
 
     if (!empty($clients)) {
-      $notification->clients()->attach($clients);
+      $notification->clients()->attach($clientsIds);
 
       // push fcm notification (Firebase Cloud Messaging)
-      // get tokens for each client
-      // push notification to each token
+      $clients = $clientsQuery->get();
+      foreach ($clients as $client){
+        $client->notify(new DonationRequestCreated($notification));
+      }
     }
 
     $data = [
