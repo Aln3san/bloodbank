@@ -30,6 +30,7 @@ class RegisterRequest extends FormRequest
       'blood_type_id' => 'required|integer|exists:blood_types,id',
       'last_donation_date' => 'required|date',
       'city_id' => 'required|integer|exists:cities,id',
+      'fcm_token' => 'nullable|string|max:255',
     ];
   }
 }

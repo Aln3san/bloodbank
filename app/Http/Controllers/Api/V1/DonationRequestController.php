@@ -45,12 +45,15 @@ class DonationRequestController extends Controller
     $notification  = $donationRequest->notifications()->create([
       'title' => 'New Donation Request',
       'message' => 'A new donation request has been created in your area.',
+      'client_id' => $request->user()->id,
     ]);
 
     if (!empty($clients)) {
       $notification->clients()->attach($clients);
 
-      // push fcm notification
+      // push fcm notification (Firebase Cloud Messaging)
+      // get tokens for each client
+      // push notification to each token
     }
 
     $data = [

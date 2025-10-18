@@ -13,6 +13,7 @@ class NotificationController extends Controller
 
   public function notifications(){
     $notifications = auth()->user()->notifications()->get();
+    // dd(auth()->user());
     $data = [
       'Notifications' => $notifications
     ];
