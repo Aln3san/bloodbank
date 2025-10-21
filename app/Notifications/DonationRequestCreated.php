@@ -40,7 +40,7 @@ class DonationRequestCreated extends Notification
       ->data(['data1' => 'value', 'data2' => 'value2'])
       ->custom([
         'android' => [
-          'notification' => [
+          'notification' => [ 
             'color' => '#0A0A0A',
           ],
           'fcm_options' => [
