@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GovernorateController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -16,11 +17,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 // Routes Admin Dashboard
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('admin');
 });
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Auth::routes();
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('governorates', GovernorateController::class);
+    });
 });
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
