@@ -33,4 +33,19 @@ return [
     'deleted' => 'Deleted!',
     'opps' => 'Opps!',
     'something_went_wrong' => 'Something went wrong!',
+
+    // cities list translations
+    'cities' => 'Cities',
+    'cities_list' => 'Cities List',
+    'city_name' => 'City Name',
+    'create_city' => 'Create City',
+    'update_city' => 'Update City',
+    'governorate_id' => 'Governorate ID',
+
+    // categories list translations
+    'categories' => 'Categories',
+    'categories_list' => 'Categories List',
+    'category_name' => 'Category Name',
+    'create_category' => 'Create Category',
+    'update_category' => 'Update Category',
 ];

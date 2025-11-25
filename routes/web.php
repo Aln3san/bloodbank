@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GovernorateController;
@@ -26,5 +27,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('governorates', GovernorateController::class); 
         Route::resource('cities', CityController::class);
+        Route::resource('categories', CategoryController::class);
     });
 });

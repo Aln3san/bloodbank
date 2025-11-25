@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href={{ route('dashboard') }}>{{ __('messages.dashboard') }}</a></li>
-                    <li class="breadcrumb-item active">{{ __('messages.governorates_list') }}</li>
+                    <li class="breadcrumb-item active">{{ __('messages.categories_list') }}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,9 +23,9 @@
                 <div class="card">
                     @include('admin.layout.partial._flashmessage')
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3 class="card-title">{{ __('messages.governorates_list') }}</h3>
-                        <a href={{ url(route('governorates.create')) }} class="btn btn-primary btn-sm ml-auto"><i
-                                class="far fa-plus-square"></i> {{ __('messages.add') }}</a>
+                        <h3 class="card-title">{{ __('messages.categories_list') }}</h3>
+                        {{-- <a href={{ url(route('governorates.create')) }} class="btn btn-primary btn-sm ml-auto"><i
+                                class="far fa-plus-square"></i> {{ __('messages.add') }}</a> --}}
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

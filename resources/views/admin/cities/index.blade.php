@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href={{ route('dashboard') }}>{{ __('messages.dashboard') }}</a></li>
-                    <li class="breadcrumb-item active">{{ __('messages.governorates_list') }}</li>
+                    <li class="breadcrumb-item active">{{ __('messages.cities_list') }}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,8 +23,8 @@
                 <div class="card">
                     @include('admin.layout.partial._flashmessage')
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3 class="card-title">{{ __('messages.governorates_list') }}</h3>
-                        <a href={{ url(route('governorates.create')) }} class="btn btn-primary btn-sm ml-auto"><i
+                        <h3 class="card-title">{{ __('messages.cities_list') }}</h3>
+                        <a href={{ url(route('cities.create')) }} class="btn btn-primary btn-sm ml-auto"><i
                                 class="far fa-plus-square"></i> {{ __('messages.add') }}</a>
                     </div>
                     <!-- /.card-header -->
@@ -34,23 +34,23 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>{{ __('messages.name') }}</th>
-                                    <th>{{ __('messages.cities_count') }}</th>
+                                    <th>{{ __('messages.governorate_id') }}</th>
                                     <th style="width: 40px">{{ __('messages.actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($governorates as $governorate)
-                                    <tr id="tr_{{ $governorate->id }}">
+                                @foreach ($cities as $city)
+                                    <tr id="tr_{{ $city->id }}">
                                         <td>{{ $loop->iteration }}.</td>
-                                        <td>{{ $governorate->name }}</td>
+                                        <td>{{ $city->name }}</td>
                                         <td>
-                                            {{ $governorate->cities_count }}
+                                            {{ $city->governorate_id }}
                                         </td>
                                         <td class="d-flex">
-                                            <a href={{ url(route('governorates.edit', $governorate->id)) }}
+                                            <a href={{ url(route('cities.edit', $city->id)) }}
                                                 class="btn btn-primary mx-1"><i class="far fa-edit"></i></a>
-                                            <button type="button" data-id="tr_{{ $governorate->id }}"
-                                                data-url={{ url(route('governorates.destroy', $governorate->id)) }}
+                                            <button type="button" data-id="tr_{{ $city->id }}"
+                                                data-url={{ url(route('cities.destroy', $city->id)) }}
                                                 class="btn delete-item btn-danger mx-1"><i
                                                     class="far fa-trash-alt"></i></button>
                                         </td>
@@ -63,7 +63,7 @@
                     <div class="card-footer clearfix">
                         {{-- <ul class="pagination pagination-sm m-0 float-right"> --}}
                         {{-- <li class="page-item"><a class="page-link" href="#">«</a></li> --}}
-                        {{ $governorates->links() }}
+                        {{ $cities->links() }}
                     </div>
                 </div>
                 <!-- /.card -->
