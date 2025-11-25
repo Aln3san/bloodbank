@@ -28,10 +28,10 @@
                     <div class="info-box-content">
                         <span class="info-box-text">{{ __('messages.governorates') }}</span>
                         <span class="info-box-number">10</span>
-                    </div>
+                    </div> 
                     <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
+                </div> 
+                <! -- /.info-box --> 
                 </a>
             </div>
         </div>

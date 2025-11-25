@@ -26,4 +26,11 @@ return [
     'error_occurred' => 'An error occurred. Please try again.',
     'item_deleted' => 'Governorate deleted successfully.',
     'governorates_list_update' => 'Update Governorate',
+    'are_you_sure' => 'Are you sure?',
+    'you_wont_be_able_to_revert_this' => "You wont be able to revert this!",
+    'yes_delete_it' => 'Yes, delete it!',
+    'cancel' => 'Cancel',
+    'deleted' => 'Deleted!',
+    'opps' => 'Opps!',
+    'something_went_wrong' => 'Something went wrong!',
 ];

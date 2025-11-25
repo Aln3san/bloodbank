@@ -69,7 +69,9 @@ class GovernorateController extends Controller
     {
         $governorate = Governorate::findOrFail($id);
         $governorate->delete();
-        return redirect()->route('governorates.index')->with('success', __("messages.item_deleted"));
+        // return redirect()->route('governorates.index')->with( __("messages.item_deleted"));
+        return response()->json( [
+            'message' => __("messages.item_deleted")
+        ]);
     }
-    
 }
