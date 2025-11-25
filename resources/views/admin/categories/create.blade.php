@@ -9,8 +9,8 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href={{ route('dashboard') }}>{{ __('messages.dashboard') }}</a></li>
-                    <li class="breadcrumb-item active">{{ __('messages.governorates_list') }}</li>
-                    <li class="breadcrumb-item active">{{ __('messages.governorates_list_create') }}</li>
+                    <li class="breadcrumb-item active">{{ __('messages.categories_list') }}</li>
+                    <li class="breadcrumb-item active">{{ __('messages.create_category') }}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,11 +23,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3 class="card-title">{{ __('messages.governorates_list_create') }}</h3>
+                        <h3 class="card-title">{{ __('messages.create_category') }}</h3>
                         <a href={{ route('governorates.index') }} class="btn btn-primary btn-sm ml-auto"><i
                                 class="fas fa-home"></i></a>
                     </div>
-                    <form action={{ url(route('governorates.store')) }} method="POST">
+                    <form action={{ url(route('categories.store')) }} method="POST">
                         @csrf
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -37,9 +37,9 @@
 
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="name">{{ __('messages.governorate_name') }}</label>
+                                        <label for="name">{{ __('messages.category_name') }}</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="{{ __('messages.governorate_name') }}">
+                                            placeholder="{{ __('messages.category_name') }}">
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

@@ -24,8 +24,8 @@
                     @include('admin.layout.partial._flashmessage')
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="card-title">{{ __('messages.categories_list') }}</h3>
-                        {{-- <a href={{ url(route('governorates.create')) }} class="btn btn-primary btn-sm ml-auto"><i
-                                class="far fa-plus-square"></i> {{ __('messages.add') }}</a> --}}
+                        <a href={{ url(route('categories.create')) }} class="btn btn-primary btn-sm ml-auto"><i
+                                class="far fa-plus-square"></i> {{ __('messages.add') }}</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -34,23 +34,19 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>{{ __('messages.name') }}</th>
-                                    <th>{{ __('messages.cities_count') }}</th>
                                     <th style="width: 40px">{{ __('messages.actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($governorates as $governorate)
-                                    <tr id="tr_{{ $governorate->id }}">
+                                @foreach ($categories as $category)
+                                    <tr id="tr_{{ $category->id }}">
                                         <td>{{ $loop->iteration }}.</td>
-                                        <td>{{ $governorate->name }}</td>
-                                        <td>
-                                            {{ $governorate->cities_count }}
-                                        </td>
+                                        <td>{{ $category->name }}</td>
                                         <td class="d-flex">
-                                            <a href={{ url(route('governorates.edit', $governorate->id)) }}
+                                            <a href={{ url(route('categories.edit', $category->id)) }}
                                                 class="btn btn-primary mx-1"><i class="far fa-edit"></i></a>
-                                            <button type="button" data-id="tr_{{ $governorate->id }}"
-                                                data-url={{ url(route('governorates.destroy', $governorate->id)) }}
+                                            <button type="button" data-id="tr_{{ $category->id }}"
+                                                data-url={{ url(route('categories.destroy', $category->id)) }}
                                                 class="btn delete-item btn-danger mx-1"><i
                                                     class="far fa-trash-alt"></i></button>
                                         </td>
@@ -63,7 +59,7 @@
                     <div class="card-footer clearfix">
                         {{-- <ul class="pagination pagination-sm m-0 float-right"> --}}
                         {{-- <li class="page-item"><a class="page-link" href="#">«</a></li> --}}
-                        {{ $governorates->links() }}
+                        {{ $categories->links() }}
                     </div>
                 </div>
                 <!-- /.card -->
