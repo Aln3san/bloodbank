@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="card-title">{{ __('messages.create_category') }}</h3>
-                        <a href={{ route('governorates.index') }} class="btn btn-primary btn-sm ml-auto"><i
+                        <a href={{ route('categories.index') }} class="btn btn-primary btn-sm ml-auto"><i
                                 class="fas fa-home"></i></a>
                     </div>
                     <form action={{ url(route('categories.store')) }} method="POST">

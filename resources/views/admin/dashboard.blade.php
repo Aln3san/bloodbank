@@ -21,6 +21,23 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12">
 
+                <a href={{ route('clients.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-user"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.clients') }}</span>
+                            <span class="info-box-number">{{ $clientsCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+
                 <a href={{ route('governorates.index') }} class="text-dark">
                     <div class="info-box">
                         <span class="info-box-icon bg-info"><i class="fas fa-city"></i></span>

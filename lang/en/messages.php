@@ -11,6 +11,20 @@ return [
     'blood_dashboard' => 'Blood Dashboard',
     'dashboard' => 'Dashboard',
 
+    // clients list translations
+    'clients' => 'Clients',
+    'clients_list' => 'Clients List',
+    'client_name' => 'Client Name',
+    'client_phone' => 'Client Phone',    
+    'client_email' => 'Client Email',
+    'client_password' => 'Client Password',
+    'client_dob' => 'Client Date of Birth',
+    'client_blood_type' => 'Client Blood Type',
+    'client_last_donation_date' => 'Client Last Donation Date',
+    'client_city' => 'Client City',
+    'create_client' => 'Create Client',
+    'update_client' => 'Update Client',
+
     // governorates list translations
     'governorates_list' => 'Governorates List',
     'name' => 'Name',
@@ -41,6 +55,7 @@ return [
     'create_city' => 'Create City',
     'update_city' => 'Update City',
     'governorate_id' => 'Governorate ID',
+    'choose_governorate' => 'Choose Governorate',
 
     // categories list translations
     'categories' => 'Categories',

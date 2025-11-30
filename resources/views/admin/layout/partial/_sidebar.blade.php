@@ -62,6 +62,14 @@
                     </ul>
                 </li> --}}
                 <li class="nav-item">
+                    <a href={{ route('clients.index') }} class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            {{ __('messages.clients') }}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href={{ route('governorates.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>

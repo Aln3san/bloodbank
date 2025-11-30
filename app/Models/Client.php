@@ -17,12 +17,23 @@ class Client extends Authenticatable
 
   public function bloodType()
   {
-    return $this->belongsTo(Client::class);
+    return $this->belongsTo(BloodType::class, 'blood_type_id');
   }
 
   public function city()
   {
     return $this->belongsTo(City::class);
+  }
+
+  /**
+   * Scope to apply filters from request in a clean way
+   */
+  public function scopeFilter($query, array $filters)
+  {
+    $query->when($filters['name'] ?? null, fn($q, $v) => $q->where('name', 'like', "%{$v}%"));
+    $query->when($filters['phone'] ?? null, fn($q, $v) => $q->where('phone', 'like', "%{$v}%"));
+    $query->when($filters['city_id'] ?? null, fn($q, $v) => $q->where('city_id', $v));
+    $query->when($filters['blood_type_id'] ?? null, fn($q, $v) => $q->where('blood_type_id', $v));
   }
 
   public function posts()
@@ -48,11 +59,6 @@ class Client extends Authenticatable
   public function governorates()
   {
     return $this->belongsToMany(Governorate::class);
-  }
-
-  public function bloodTypes()
-  {
-    return $this->belongsToMany(BloodType::class);
   }
 
   /**
