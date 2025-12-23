@@ -17,6 +17,7 @@ use Database\Seeders\Api\NotificationSeeder;
 use Database\Seeders\Api\NotificationSettingsSeeder;
 use Database\Seeders\Api\PostSeeder;
 use Database\Seeders\Api\SettingSeeder;
+use Database\Seeders\Dashboard\PermissionSeeder;
 use Database\Seeders\Dashboard\UserSeeder;
 use Illuminate\Database\Seeder;
 
@@ -40,6 +41,7 @@ class DatabaseSeeder extends Seeder
       FavouritesSeeder::class,
       NotificationSettingsSeeder::class,
       UserSeeder::class,
+      PermissionSeeder::class,
     ]);
   }
 }

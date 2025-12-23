@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class GovernorateController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:create governorates')->only(['create', 'store']);
+        $this->middleware('permission:read governorates')->only(['index', 'show']);
+        $this->middleware('permission:update governorates')->only(['edit', 'update']);
+        $this->middleware('permission:delete governorates')->only(['destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      */

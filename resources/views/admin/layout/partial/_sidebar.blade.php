@@ -62,6 +62,14 @@
                     </ul>
                 </li> --}}
                 <li class="nav-item">
+                    <a href={{ route('dashboard') }} class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            {{ __('messages.dashboard') }}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href={{ route('clients.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
@@ -69,6 +77,28 @@
                         </p>
                     </a>
                 </li>
+                @can('read users')
+                <li class="nav-item">
+                    <a href={{ route('users.index') }} class="nav-link">
+                        <i class="nav-icon fas fa-user-cog"></i>
+                        <p>
+                            {{ __('messages.users') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
+                @can('read roles')
+                <li class="nav-item">
+                    <a href={{ route('roles.index') }} class="nav-link">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        <p>
+                            {{ __('messages.roles') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
+                @can('read governorates')
+                    
                 <li class="nav-item">
                     <a href={{ route('governorates.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -77,6 +107,8 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+                @can('read cities')
                 <li class="nav-item">
                     <a href={{ route('cities.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -85,6 +117,9 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+                @can('read categories')
+                 
                 <li class="nav-item">
                     <a href={{ route('categories.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -93,6 +128,7 @@
                         </p>
                     </a>
                 </li>
+                @endcan
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

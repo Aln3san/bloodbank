@@ -19,8 +19,25 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
+            @can('read users')
             <div class="col-md-3 col-sm-6 col-12">
+                <a href={{ route('users.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-users-cog"></i></span>
 
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.users') }}</span>
+                            <span class="info-box-number">{{ $usersCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+            </div>
+            @endcan
+
+            @can('read clients')
+            <div class="col-md-3 col-sm-6 col-12">
                 <a href={{ route('clients.index') }} class="text-dark">
                     <div class="info-box">
                         <span class="info-box-icon bg-info"><i class="fas fa-user"></i></span>
@@ -33,9 +50,10 @@
                     </div>
                     <! -- /.info-box -->
                 </a>
-
             </div>
+            @endcan
 
+            @can('read governorates')           
             <div class="col-md-3 col-sm-6 col-12">
 
                 <a href={{ route('governorates.index') }} class="text-dark">
@@ -52,7 +70,9 @@
                 </a>
 
             </div>
+            @endcan
 
+            @can('read cities')
             <div class="col-md-3 col-sm-6 col-12">
                 <a href={{ route('cities.index') }} class="text-dark">
                     <div class="info-box">
@@ -67,7 +87,9 @@
                     <! -- /.info-box -->
                 </a>
             </div>
+            @endcan
 
+            @can('read categories')
             <div class="col-md-3 col-sm-6 col-12">
                 <a href={{ route('categories.index') }} class="text-dark">
                     <div class="info-box">
@@ -82,6 +104,8 @@
                     <! -- /.info-box -->
                 </a>
             </div>
+            @endcan
+
         </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->

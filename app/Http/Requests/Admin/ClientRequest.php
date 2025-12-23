@@ -21,11 +21,25 @@ class ClientRequest extends FormRequest
      */
     public function rules(): array
     {
+        $clientId = $this->route('client') ?? $this->route('id') ?? null;
+
+        $phoneRule = 'required|string|max:20|unique:clients,phone';
+        if ($clientId) {
+            $phoneRule .= ',' . $clientId;
+        }
+
+        $emailRule = 'required|string|email|max:255|unique:clients,email';
+        if ($clientId) {
+            $emailRule .= ',' . $clientId;
+        }
+
+        $passwordRule = $clientId ? 'nullable|string|min:8|confirmed' : 'required|string|min:8|confirmed';
+
         return [
             'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:20|unique:clients,phone',
-            'email' => 'required|string|email|max:255|unique:clients,email',
-            'password' => 'required|string|min:8|confirmed',
+            'phone' => $phoneRule,
+            'email' => $emailRule,
+            'password' => $passwordRule,
             'date_of_birth' => 'required|date',
             'blood_type_id' => 'required|exists:blood_types,id',
             'last_donation_date' => 'required|date',

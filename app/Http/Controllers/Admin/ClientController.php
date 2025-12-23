@@ -13,6 +13,13 @@ use App\Models\BloodType;
 
 class ClientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:read clients')->only(['index', 'show']);
+        $this->middleware('permission:update clients')->only(['edit', 'update']);
+        $this->middleware('permission:delete clients')->only(['destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      */

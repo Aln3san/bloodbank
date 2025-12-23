@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\Client;
 use App\Models\Governorate;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,6 +18,7 @@ class DashboardController extends Controller
     $governoratesCount = Governorate::count();
     $citiesCount = City::count();
     $categoriesCount = Category::count();
-    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount'));
+    $usersCount = User::count();
+    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount', 'usersCount'));
   }
 }

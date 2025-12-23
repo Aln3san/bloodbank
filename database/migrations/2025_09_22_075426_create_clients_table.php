@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
       $table->string('email', 255);
       $table->date('date_of_birth');
       $table->bigInteger('blood_type_id')->unsigned();
-      $table->date('last_donation_date');
+      $table->date('last_donation_date')->nullable();
       $table->bigInteger('city_id')->unsigned();
       $table->timestamps();
 
