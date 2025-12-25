@@ -29,18 +29,18 @@ class DatabaseSeeder extends Seeder
   public function run(): void
   {
     $this->call([
-      BloodTypeSeeder::class,
-      GovernorateSeeder::class,
-      CitySeeder::class,
-      SettingSeeder::class,
-      CategorySeeder::class,
-      PostSeeder::class,
-      ContactSeeder::class,
-      NotificationSeeder::class,
-      DonationRequestSeeder::class,
-      FavouritesSeeder::class,
-      NotificationSettingsSeeder::class,
-      UserSeeder::class,
+      // BloodTypeSeeder::class,
+      // GovernorateSeeder::class,
+      // CitySeeder::class,
+      // SettingSeeder::class,
+      // CategorySeeder::class,
+      // PostSeeder::class,
+      // ContactSeeder::class,
+      // NotificationSeeder::class,
+      // DonationRequestSeeder::class,
+      // FavouritesSeeder::class,
+      // NotificationSettingsSeeder::class,
+      // UserSeeder::class,
       PermissionSeeder::class,
     ]);
   }

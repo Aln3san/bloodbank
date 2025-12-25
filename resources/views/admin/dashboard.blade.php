@@ -106,6 +106,23 @@
             </div>
             @endcan
 
+            @can('read posts')
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href={{ route('posts.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-newspaper"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.posts') }}</span>
+                            <span class="info-box-number">{{ $postsCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+            </div>
+            @endcan
+
         </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->

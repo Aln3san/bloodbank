@@ -77,6 +77,7 @@
                         </p>
                     </a>
                 </li>
+                
                 @can('read users')
                 <li class="nav-item">
                     <a href={{ route('users.index') }} class="nav-link">
@@ -87,6 +88,7 @@
                     </a>
                 </li>
                 @endcan
+
                 @can('read roles')
                 <li class="nav-item">
                     <a href={{ route('roles.index') }} class="nav-link">
@@ -97,6 +99,7 @@
                     </a>
                 </li>
                 @endcan
+
                 @can('read governorates')
                     
                 <li class="nav-item">
@@ -108,6 +111,7 @@
                     </a>
                 </li>
                 @endcan
+
                 @can('read cities')
                 <li class="nav-item">
                     <a href={{ route('cities.index') }} class="nav-link">
@@ -118,13 +122,24 @@
                     </a>
                 </li>
                 @endcan
+
                 @can('read categories')
-                 
                 <li class="nav-item">
                     <a href={{ route('categories.index') }} class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             {{ __('messages.categories') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
+
+                @can('read posts')
+                <li class="nav-item">
+                    <a href={{ route('posts.index') }} class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            {{ __('messages.posts') }}
                         </p>
                     </a>
                 </li>

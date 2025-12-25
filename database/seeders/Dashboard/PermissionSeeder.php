@@ -66,6 +66,14 @@ class PermissionSeeder extends Seeder
                 'delete categories',
             ],
 
+            // Posts
+            'posts' => [
+                'create posts',
+                'read posts',
+                'update posts',
+                'delete posts',
+            ],
+
         ];
         foreach ($permissions as $group => $permissionList) {
             foreach ($permissionList as $permissionName) {

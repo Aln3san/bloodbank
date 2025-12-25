@@ -71,6 +71,8 @@ return [
     'update_user' => 'Update User',
     'password' => 'Password',
     'email' => 'Email',
+
+    // roles
     'roles' => 'Roles',
     'select_roles' => 'Select Role',
     'roles' => 'Roles',
@@ -83,4 +85,16 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'confirm_delete' => 'Are you sure you want to delete this item?',
+
+    // posts
+    'posts' => 'Posts',
+    'posts_list' => 'Posts List',
+    'post_list_create' => 'Create Post',
+    'create_post' => 'Create Post',
+    'update_post' => 'Update Post',
+    'post_content' => 'Post Content',
+    'post_title' => 'Post Title',
+    'post_photo' => 'Post Photo',
+    'choose_category' => 'Choose Category',
+    'category' => 'Category',
 ];

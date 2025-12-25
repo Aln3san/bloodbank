@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GovernorateController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -33,5 +34,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('cities', CityController::class);
         Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
         Route::resource('categories', CategoryController::class);
+        Route::resource('posts', PostController::class);
     });
 });
