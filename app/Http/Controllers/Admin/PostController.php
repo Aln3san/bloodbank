@@ -12,10 +12,10 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:create governorates')->only(['create', 'store']);
-        $this->middleware('permission:read governorates')->only(['index', 'show']);
-        $this->middleware('permission:update governorates')->only(['edit', 'update']);
-        $this->middleware('permission:delete governorates')->only(['destroy']);
+        $this->middleware('permission:create posts')->only(['create', 'store']);
+        $this->middleware('permission:read posts')->only(['index', 'show']);
+        $this->middleware('permission:update posts')->only(['edit', 'update']);
+        $this->middleware('permission:delete posts')->only(['destroy']);
     }
 
     /**

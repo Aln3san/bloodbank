@@ -97,4 +97,31 @@ return [
     'post_photo' => 'Post Photo',
     'choose_category' => 'Choose Category',
     'category' => 'Category',
+
+    // contacts
+    'contacts' => 'Contacts',
+    'contacts_list' => 'Contacts List',
+    'create_contact' => 'Create Contact',
+    'update_contact' => 'Update Contact',
+    'subject' => 'Subject',
+    'message' => 'Message',
+
+    // donations
+    'donations' => 'Donations Requests',
+    'donations_list' => 'Donations List',
+    'create_donations' => 'Create Donation',
+    'update_Donation' => 'Update Donation',
+    'patient_name' => 'Patient Name',
+    'patient_age' => 'Patient Age',
+    'patient_phone' => 'Patient Phone',
+    'blood_type' => 'Blood Type',
+    'bags_naumber' => 'Bags Number',
+    'hospital_name' => 'Hospital Name',
+    'latitude' => 'Latitude',
+    'longitude' => 'Longitude',
+    'notes' => 'Notes',
+    'created_at' => 'Created At',
+    'updated_at' => 'Updated At',
+    'filter' => 'Filter',
+    'clear' => 'Clear',
 ];

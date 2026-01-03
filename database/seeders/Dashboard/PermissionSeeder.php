@@ -74,6 +74,22 @@ class PermissionSeeder extends Seeder
                 'delete posts',
             ],
 
+            // Contacts
+            'contacts' => [
+                'create contacts',
+                'read contacts',
+                'update contacts',
+                'delete contacts',
+            ],
+
+            // Donations
+            'donations' => [
+                'create donations',
+                'read donations',
+                'update donations',
+                'delete donations',
+            ],
+
         ];
         foreach ($permissions as $group => $permissionList) {
             foreach ($permissionList as $permissionName) {

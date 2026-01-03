@@ -123,6 +123,40 @@
             </div>
             @endcan
 
+            @can('read contacts')
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href={{ route('contacts.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-id-card-alt"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.contacts') }}</span>
+                            <span class="info-box-number">{{ $contactsCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+            </div>
+            @endcan
+
+            @can('read donations')
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href={{ route('donations.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-hand-holding-usd"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.donations') }}</span>
+                            <span class="info-box-number">{{ $donationCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+            </div>
+            @endcan
+
         </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->

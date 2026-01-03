@@ -69,14 +69,17 @@
                         </p>
                     </a>
                 </li>
+
+                @can('read clients')
                 <li class="nav-item">
                     <a href={{ route('clients.index') }} class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fas fa-user"></i>
                         <p>
                             {{ __('messages.clients') }}
                         </p>
                     </a>
                 </li>
+                @endcan
                 
                 @can('read users')
                 <li class="nav-item">
@@ -100,11 +103,10 @@
                 </li>
                 @endcan
 
-                @can('read governorates')
-                    
+                @can('read governorates')      
                 <li class="nav-item">
                     <a href={{ route('governorates.index') }} class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fas fa-city"></i>
                         <p>
                             {{ __('messages.governorates') }}
                         </p>
@@ -115,7 +117,7 @@
                 @can('read cities')
                 <li class="nav-item">
                     <a href={{ route('cities.index') }} class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fas fa-building"></i>
                         <p>
                             {{ __('messages.cities') }}
                         </p>
@@ -126,7 +128,7 @@
                 @can('read categories')
                 <li class="nav-item">
                     <a href={{ route('categories.index') }} class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fas fa-stream"></i>
                         <p>
                             {{ __('messages.categories') }}
                         </p>
@@ -137,9 +139,31 @@
                 @can('read posts')
                 <li class="nav-item">
                     <a href={{ route('posts.index') }} class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="fas fa-newspaper"></i>
                         <p>
                             {{ __('messages.posts') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
+
+                @can('read contacts')
+                <li class="nav-item">
+                    <a href={{ route('contacts.index') }} class="nav-link">
+                        <i class="fas fa-id-card-alt"></i>
+                        <p>
+                            {{ __('messages.contacts') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
+
+                @can('read donations')
+                <li class="nav-item">
+                    <a href={{ route('donations.index') }} class="nav-link">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <p>
+                            {{ __('messages.donations') }}
                         </p>
                     </a>
                 </li>

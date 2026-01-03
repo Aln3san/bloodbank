@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Client;
+use App\Models\Contact;
+use App\Models\DonationRequest;
 use App\Models\Governorate;
 use App\Models\Post;
 use App\Models\User;
@@ -21,6 +23,8 @@ class DashboardController extends Controller
     $categoriesCount = Category::count();
     $usersCount = User::count();
     $postsCount = Post::count();
-    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount', 'usersCount', 'postsCount'));
+    $contactsCount = Contact::count();
+    $donationCount = DonationRequest::count();
+    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount', 'usersCount', 'postsCount', "contactsCount", 'donationCount'));
   }
 }
