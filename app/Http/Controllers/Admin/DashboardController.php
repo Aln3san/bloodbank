@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\DonationRequest;
 use App\Models\Governorate;
 use App\Models\Post;
+use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class DashboardController extends Controller
     $postsCount = Post::count();
     $contactsCount = Contact::count();
     $donationCount = DonationRequest::count();
-    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount', 'usersCount', 'postsCount', "contactsCount", 'donationCount'));
+    $settingsCount = Settings::count();
+    return view('admin.dashboard', compact('clientsCount', 'governoratesCount', 'citiesCount', 'categoriesCount', 'usersCount', 'postsCount', "contactsCount", 'donationCount', 'settingsCount'));
   }
 }

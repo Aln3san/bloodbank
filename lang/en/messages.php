@@ -11,6 +11,11 @@ return [
     'blood_dashboard' => 'Blood Dashboard',
     'dashboard' => 'Dashboard',
 
+    // partials translations
+    'updated_successfully' => 'Updated successfully.',
+    'created_successfully' => 'Created successfully.',
+    'deleted_successfully' => 'Deleted successfully.',
+
     // clients list translations
     'clients' => 'Clients',
     'clients_list' => 'Clients List',
@@ -124,4 +129,16 @@ return [
     'updated_at' => 'Updated At',
     'filter' => 'Filter',
     'clear' => 'Clear',
+    'donation_details' => 'Donation Details',
+
+    // settings
+    'settings' => 'Settings',
+    'settings_list' => 'Settings List',
+    'update_setting' => 'Update Setting',
+    'about_app' => 'About App',
+    'phone' => 'Phone',
+    'fb_url' => 'Facebook URL',
+    'x_url' => 'X URL',
+    'insta_url' => 'Instagram URL',
+    'youtube_url' => 'YouTube URL',
 ];

@@ -157,6 +157,23 @@
             </div>
             @endcan
 
+            @can('read settings')
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href={{ route('settings.index') }} class="text-dark">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-cogs"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{ __('messages.settings') }}</span>
+                            <span class="info-box-number">{{ $settingsCount }}</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <! -- /.info-box -->
+                </a>
+            </div>
+            @endcan
+
         </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->

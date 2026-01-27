@@ -90,6 +90,13 @@ class PermissionSeeder extends Seeder
                 'delete donations',
             ],
 
+            // Settings
+            'settings' => [
+                'read settings',
+                'update settings',
+                'delete settings',
+            ],
+
         ];
         foreach ($permissions as $group => $permissionList) {
             foreach ($permissionList as $permissionName) {

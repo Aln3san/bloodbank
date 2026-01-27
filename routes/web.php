@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\DonationRequestController as AdminDonationRequest
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DonationRequestController;
+use App\Http\Controllers\Admin\SettingAppController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -34,12 +35,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('users', UserController::class);
         Route::resource('clients', ClientController::class);
-        Route::resource('governorates', GovernorateController::class); 
+        Route::resource('governorates', GovernorateController::class);
         Route::resource('cities', CityController::class);
         Route::resource('roles', RoleController::class);
         Route::resource('categories', CategoryController::class);
         Route::resource('posts', PostController::class);
         Route::resource('contacts', ContactController::class);
         Route::resource('donations', DonationRequestController::class);
+    Route::resource('settings', SettingAppController::class);
     });
 });

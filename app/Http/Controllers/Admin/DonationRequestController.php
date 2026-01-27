@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class DonationRequestController extends Controller
 {
-     public function __construct()
+    public function __construct()
     {
         $this->middleware('permission:create donations')->only(['create', 'store']);
         $this->middleware('permission:read donations')->only(['index', 'show']);
@@ -37,6 +37,18 @@ class DonationRequestController extends Controller
         $cities = City::all();
 
         return view('admin.donations.index', compact('donations','filters','bloodTypes','cities'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $donation = DonationRequest::findOrFail($id);
+        $bloodTypes = BloodType::all();
+        $cities = City::all();
+
+        return view('admin.donations.show', compact('donation', 'bloodTypes', 'cities'));
     }
 
     /**

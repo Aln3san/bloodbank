@@ -168,6 +168,17 @@
                     </a>
                 </li>
                 @endcan
+
+                @can('read settings')
+                <li class="nav-item">
+                    <a href={{ route('settings.index') }} class="nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <p>
+                            {{ __('messages.settings') }}
+                        </p>
+                    </a>
+                </li>
+                @endcan
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

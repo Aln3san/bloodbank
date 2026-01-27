@@ -93,6 +93,7 @@
                                             <td>{{ $donation->created_at }}</td>
                                             <td>{{ $donation->updated_at }}</td>
                                         <td class="d-flex">
+                                            <a href="{{ route('donations.show', $donation->id) }}" class="btn btn-primary mx-1"><i class="fas fa-eye"></i></a>
                                             <button type="button" data-id="tr_{{ $donation->id }}"
                                                 data-url="{{ route('donations.destroy', $donation->id) }}"
                                                 class="btn delete-item btn-danger mx-1"><i
