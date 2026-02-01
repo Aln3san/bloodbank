@@ -38,3 +38,4 @@ class SettingAppController extends Controller
         return redirect()->route('settings.index')->with('success', __('messages.updated_successfully'));
     }
 }
+ 
