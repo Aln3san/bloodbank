@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DonationRequestController;
 use App\Http\Controllers\Admin\SettingAppController;
+use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -26,9 +27,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 // Routes Admin Dashboard
-Route::get('/', function () {
-    return redirect('admin');
-});
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::group(['middleware' => 'auth'], function () {
@@ -42,6 +44,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('posts', PostController::class);
         Route::resource('contacts', ContactController::class);
         Route::resource('donations', DonationRequestController::class);
-    Route::resource('settings', SettingAppController::class);
+        Route::resource('settings', SettingAppController::class);
     });
 });

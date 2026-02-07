@@ -1,12 +1,15 @@
 <?php
 
 return [
+    /* ---------------------------------------------------------------- */
+    /* ---------------------- Admin Translations ---------------------- */
+    /* ---------------------------------------------------------------- */
     // navbar and sidebar translations
     'bloodbank' => 'BloodBank',
     'home' => 'Home',
     'search' => 'Search',
     'governorates' => 'Governorates',
-    
+
     // dashboard translations
     'blood_dashboard' => 'Blood Dashboard',
     'dashboard' => 'Dashboard',
@@ -20,7 +23,7 @@ return [
     'clients' => 'Clients',
     'clients_list' => 'Clients List',
     'client_name' => 'Client Name',
-    'client_phone' => 'Client Phone',    
+    'client_phone' => 'Client Phone',
     'client_email' => 'Client Email',
     'client_password' => 'Client Password',
     'client_dob' => 'Client Date of Birth',
@@ -68,7 +71,7 @@ return [
     'category_name' => 'Category Name',
     'create_category' => 'Create Category',
     'update_category' => 'Update Category',
-    
+
     // users
     'users' => 'Users',
     'users_list' => 'Users List',
@@ -141,4 +144,36 @@ return [
     'x_url' => 'X URL',
     'insta_url' => 'Instagram URL',
     'youtube_url' => 'YouTube URL',
+
+
+    /* ------------------------------------------------------------------ */
+    /* ---------------------- Website Translations ---------------------- */
+    /* ------------------------------------------------------------------ */
+    // --- Home Page --- //
+    'blood_bank' => 'Blood Bank',
+    'blood_bank_forward_for_better_health' => 'Blood Bank Forward for Better Health',
+    'blood_bank_app' => 'Blood Bank App',
+    'home' => 'Home',
+    'about_blood_bank' => 'About Blood Bank',
+    'articles' => 'Articles',
+    'donations' => 'Donations',
+    'about_us' => 'About Us',
+    'contact_us' => 'Contact Us',
+    'create_new_account' => 'Create New Account',
+    'example_text' => 'This text is an example of text that can be replaced',
+    'example_text_2' => 'In the same space, this text was generated.',
+    'example_text_3' => 'From the birth of the Arabic text',
+    'more' => 'More',
+    'methods_of_preventing_diseases' => 'Methods of preventing diseases',
+    'details' => 'Details',
+    'choose_blood_type' => 'Choose Blood Type',
+    'choose_city' => 'Choose City',
+    'call_us' => 'Call Us',
+    'call_us_description' => 'If you need urgent blood support, contact us via WhatsApp or phone.',
+    'available_on' => 'Available On',
+    'donation_requests' => 'Donation Requests',
+    'all_rights_reserved' => 'All rights reserved',
+    'login' => 'Login',
+    
+
 ];
