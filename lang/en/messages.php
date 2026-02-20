@@ -174,6 +174,17 @@ return [
     'donation_requests' => 'Donation Requests',
     'all_rights_reserved' => 'All rights reserved',
     'login' => 'Login',
-    
-
+    'no_articles' => 'No articles available.',
+    'profile' => 'Profile',
+    'notifications_settings' => 'Notifications Settings',
+    'favorites' => 'Favorites',
+    'reports' => 'Reports',
+    'contact_us' => 'Contact Us',
+    'logout' => 'Logout',
+    'welcome' => 'Welcome',
+    'forgot_password' => 'Forgot Password ?',
+    'remember_me' => 'Remember Me',
+    'case_name' => 'Case Name',
+    'hospital' => 'Hospital',
+    'city' => 'City',
 ];

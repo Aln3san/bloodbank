@@ -12,7 +12,9 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DonationRequestController;
 use App\Http\Controllers\Admin\SettingAppController;
+use App\Http\Controllers\Website\Auth\LoginController;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\PostController as WebsitePostController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -26,11 +28,35 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Lang Route
+Route::get('lang/{locale}', function ($locale) {
+
+    if (in_array($locale, ['en', 'ar'])) {
+        session(['locale' => $locale]);
+    }
+
+    return redirect()->back();
+})->name('change.language');
+
+
+
+// Website Routes
+Route::group(['as' => 'website.'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('login', [LoginController::class, 'loginView'])->name('login');
+    Route::post('login', [LoginController::class, 'login'])->name('login.post');
+    // Route::get('/', [WebsitePostController::class, 'posts'])->name('post');
+    Route::group(['prefix' => 'auth:website'], function () {
+        // my favourite
+        // profile
+        // change password
+        // create donation request
+    });
+});
+
+
 // Routes Admin Dashboard
-
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::group(['middleware' => 'auth'], function () {

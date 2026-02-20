@@ -73,9 +73,6 @@
   background-color: var(--second-background-color);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.navbar .navbar-nav{
-  margin-left: 20px;
-}
 
 .navbar .nav-item {
   position: relative;
@@ -104,7 +101,7 @@
 }
 
 .navbar .navbar-register {
-  margin-right: 70px;
+  margin-left: 70px;
 }
 
 .navbar .navbar-register a {
@@ -134,14 +131,12 @@
 .header .header-slider h1 {
   font-size: 35px;
   font-weight: 900;
-  text-align: left;
 }
 
 .header .header-slider p {
   font-size: 25px;
   font-weight: 400;
   line-height: 2.5;
-  text-align: left;
 }
 
 .header .owl-dot span {
@@ -162,7 +157,6 @@
   background: var(--background-color);
   font-size: 19px;
   padding: 10px 50px;
-  margin-right: auto;
 }
 
 /* End Header Seciton */
@@ -198,7 +192,7 @@
 .articles .owl-nav {
   position: absolute;
   top: -92.5px;
-  right: 0;
+  left: 0;
 }
 
 .articles .owl-nav button {
@@ -218,7 +212,7 @@
   color: #fff;
   background: var(--background-color);
   position: absolute;
-  right: 5px;
+  left: 5px;
   top: 5px;
   padding: 7px 10px;
   border-radius: 50%;
@@ -276,7 +270,7 @@
 .donation-request .one-donation-request {
   background: var(--third-background-color);
   padding: 5px !important;
-  border-radius: 80px 0 0 80px;
+  border-radius: 0 80px 80px 0;
 }
 
 .donation-request .div-donation-request .donation-blood-type {
@@ -285,12 +279,10 @@
   border-radius: 50%;
   font-size: 35px;
   font-weight: 900;
-  margin-right: 10px;
 }
 
 .donation-request .one-donation-request p {
   font-weight: 400;
-  text-align: left;
 }
 .donation-request .div-donation-request .donation-request-details {
   background: var(--second-background-color);
@@ -298,7 +290,7 @@
   font-size: 21px;
   font-weight: 600;
   border-radius: 0;
-  margin-right: 5px;
+  margin-left: 5px;
   padding: 15px 60px;
   &:hover {
     background: var(--background-color);
@@ -341,12 +333,12 @@
 }
 
 .call-us .whats-app img {
-  margin: 10px auto 0 0;
+  margin: 10px auto 0 -10px;
 }
 
 .call-us .whats-app p {
   color: var(--second-font-color);
-  margin: 0px 20px 0 37px;
+  margin: 0px 20px 0 0;
 }
 /* End Call Us Section */
 
@@ -358,7 +350,6 @@
 
 .our-app .our-app-title {
   color: var(--main-font-color);
-  text-align: center;
 }
 
 .our-app p {
@@ -378,11 +369,11 @@ footer {
   background: var(--fifth-background-color);
   padding: 30px 0 0 0;
   color: var(--second-font-color);
-  text-align: left;
 }
 
 footer .footer-blood-bank-description {
   font-weight: 400;
+  width: 300px;
 }
 
 footer ul {
@@ -412,7 +403,7 @@ footer .copy-right {
 }
 
 footer .copy-right p {
-  margin-right: 400px;
+  margin-left: 400px;
 }
 
 footer .copy-right .copy-right-social svg {
@@ -503,7 +494,7 @@ footer .copy-right .copy-right-social svg {
 
 /* ---------- Navbar Before Log in ---------- */
 .navbar .navbar-donation-request {
-  margin-right: 70px;
+  margin-left: 70px;
 }
 
 .navbar .navbar-donation-request a.btn {
@@ -519,7 +510,7 @@ footer .copy-right .copy-right-social svg {
 
 .sup-navbar ul.dropdown-menu {
   list-style-type: none !important;
-  transform: translate(-13px, 40px) !important;
+  transform: translate(13px, 40px) !important;
   width: 267px;
   border-radius: 0;
 }

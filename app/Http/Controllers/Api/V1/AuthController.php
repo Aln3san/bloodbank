@@ -35,21 +35,31 @@ class AuthController extends Controller
 
   public function login(LoginRequest $request)
   {
+    // Find client by phone number
     $client = Client::where('phone', $request->phone)->first();
+
+    // Check if client exists and password is correct
     if (!$client || !Hash::check($request->password, $client->password)) {
       return $this->errorResponse('The provided credentials are incorrect.', 401);
     }
+
+    // Create new API token using Sanctum
     $token = $client->createToken('ApiToken');
+
     // if fcm token provided, save it to the client
     if ($request->filled('fcm_token')) {
       $accessToken = $token->accessToken;
       $accessToken->fcm_token = $request->fcm_token;
       $accessToken->save();
     }
+
+    // Prepare response data
     $data = [
       'client' => $client,
       'token' => $token->plainTextToken
     ];
+    
+    // Return success response with client data and token
     return $this->successResponse($data, 'Client Logged in Successfully', 200);
   }
 }
