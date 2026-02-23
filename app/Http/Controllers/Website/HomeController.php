@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\BloodType;
 use App\Models\City;
+use App\Models\Client;
 use App\Models\DonationRequest;
 use App\Models\Post;
 use App\Models\Settings;
@@ -30,7 +31,8 @@ class HomeController extends Controller
 
         $bloodTypes = BloodType::all();
         $cities = City::all();
+        $client = Client::find(auth('website')->id());
 
-        return view('website.home', compact('posts', 'donations', 'bloodTypes', 'cities'));
+        return view('website.home', compact('posts', 'donations', 'bloodTypes', 'cities', 'client'));
     }
 }

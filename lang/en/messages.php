@@ -187,4 +187,9 @@ return [
     'case_name' => 'Case Name',
     'hospital' => 'Hospital',
     'city' => 'City',
+    'confirm_password' => 'Confirm Password',
+    'date_of_birth' => 'Date of Birth',
+    'last_donation_date' => 'Last Donation Date',
+    'register' => 'Register',
+    'password_confirmation' => 'Confirm Password'
 ];

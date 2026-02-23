@@ -39,12 +39,9 @@
                 @if (app()->getLocale() == 'en')
                     @foreach ($donations as $donation)
                         <div class="one-donation-request d-flex justify-content-between align-items-center mb-4">
-
-                            <div class="d-inline-block">
-                                <a href="{{ url('donation-requests/' . $donation->id) }}"
-                                    class="donation-request-details btn main-font">{{ __('messages.details') }}</a>
-                            </div>
                             <div class="div-donation-blood-type d-flex align-items-center">
+                                <h3 class="donation-blood-type">
+                                    {{ $donation->bloodType->name ?? ($donation->blood_type_id ?? '-') }}</h3>
                                 <div class="ms-3 mt-3">
                                     <p class="main-font">
                                         Case name :<span
@@ -59,9 +56,12 @@
                                             class="main-font ps-4">{{ $donation->city->name ?? ($donation->city_name ?? '-') }}</span>
                                     </p>
                                 </div>
-                                <h3 class="donation-blood-type">
-                                    {{ $donation->bloodType->name ?? ($donation->blood_type_id ?? '-') }}</h3>
                             </div>
+                            <div class="d-inline-block">
+                                <a href="{{ url('donation-requests/' . $donation->id) }}"
+                                    class="donation-request-details btn main-font">{{ __('messages.details') }}</a>
+                            </div>
+
                         </div>
                     @endforeach
                 @endif
@@ -69,16 +69,20 @@
                     @foreach ($donations as $donation)
                         <div class="one-donation-request d-flex justify-content-between align-items-center mb-4">
                             <div class="div-donation-blood-type d-flex align-items-center">
-                                <h3 class="donation-blood-type">{{ $donation->bloodType->name ?? ($donation->blood_type_id ?? '-') }}</h3>
+                                <h3 class="donation-blood-type">
+                                    {{ $donation->bloodType->name ?? ($donation->blood_type_id ?? '-') }}</h3>
                                 <div class="ms-3 mt-3">
                                     <p class="main-font">
-                                        {{ __('messages.case_name') }} :<span class="main-font ps-4">{{ $donation->patient_name ?? ($donation->name ?? '-') }}</span>
+                                        {{ __('messages.case_name') }} :<span
+                                            class="main-font ps-4">{{ $donation->patient_name ?? ($donation->name ?? '-') }}</span>
                                     </p>
                                     <p class="main-font">
-                                        {{ __('messages.hospital') }} :<span class="main-font ps-4">{{ $donation->hospital_name ?? ($donation->hospital ?? '-') }}</span>
+                                        {{ __('messages.hospital') }} :<span
+                                            class="main-font ps-4">{{ $donation->hospital_name ?? ($donation->hospital ?? '-') }}</span>
                                     </p>
                                     <p class="main-font">
-                                        {{ __('messages.city') }} :<span class="main-font ps-4">{{ $donation->city->name ?? ($donation->city_name ?? '-') }}</span>
+                                        {{ __('messages.city') }} :<span
+                                            class="main-font ps-4">{{ $donation->city->name ?? ($donation->city_name ?? '-') }}</span>
                                     </p>
                                 </div>
                             </div>

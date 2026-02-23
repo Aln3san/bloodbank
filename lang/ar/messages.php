@@ -184,5 +184,9 @@ return [
 	'remember_me' => 'تذكرني',
 	'case_name' => 'اسم الحالة',
 	'hospital' => 'المستشفى',
-	'city' => 'المدينة'
+	'city' => 'المدينة',
+	'confirm_password' => 'تأكيد كلمة المرور',
+	'date_of_birth' => 'تاريخ الميلاد',
+	'last_donation_date' => 'تاريخ آخر تبرع',
+	'register' => 'إنشاء حساب'
 ];

@@ -12,7 +12,7 @@
                 <a href={{ $settings->x_url }}><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
-            @guest
+            @guest('website')
                 <div class="col-lg-4 sup-navbar-contact text-center">
                     <a href="#"><span>+2455454544545 <i class="fa-solid fa-phone"></i></span></a>
                     <span>|</span>
@@ -24,7 +24,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <span class="text-warning">{{ __('messages.welcome') }}</span> احمد محمد
+                            <span class="text-warning">{{ __('messages.welcome') }}</span> {{ auth('website')->user()->name }}
                         </a>
                         <ul class="dropdown-menu">
                             <li>
@@ -39,7 +39,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href={{ route('website.profile.edit', auth('website')->user()->id) }}>
                                     <div class="d-flex justify-content-start align-items-center">
                                         <i class="fa-regular fa-user"></i>
                                         <p class="mt-3 ms-2">{{ __('messages.profile') }}</p>
@@ -94,7 +94,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href={{ route('website.logout') }}>
                                     <div class="d-flex justify-content-start align-items-center">
                                         <i class="fa-solid fa-right-from-bracket"></i>
                                         <p class="mt-3 ms-2">{{ __('messages.logout') }}</p>

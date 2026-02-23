@@ -22,21 +22,29 @@ class LoginController extends Controller
     {
         // validation
         // Attempt to login using email & password
-            dd('here');
         if (auth('website')->attempt([
             'phone' => $request->phone,
             'password' => $request->password
         ])) {
-            // dd('logged in');
-            // Regenerate session to prevent session fixation attack
-            // $request->session()->regenerate();
 
-            // Redirect to home page after successful login
-            // return redirect()->route('website.home');
+            $request->session()->regenerate();
+
+            return redirect()->route('website.home');
         }
         // Authentication failed: return back with error message
         return back()->withErrors([
             'phone' => 'The provided credentials are incorrect.',
         ])->withInput();
+    }
+
+    public function logout(Request $request)
+    {
+        auth('website')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('website.home');
     }
 }

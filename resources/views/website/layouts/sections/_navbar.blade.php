@@ -10,7 +10,7 @@
                 {{-- محتوى العربي --}}
                  @guest
                         <div class="navbar-register">
-                            <a href="sgin-in.html" class="main-font">{{ __('messages.create_new_account') }}</a>
+                            <a href={{ route('website.register') }} class="main-font">{{ __('messages.create_new_account') }}</a>
                             <a href={{ route('website.login') }} class="main-font btn">{{ __('messages.login') }}</a>
                         </div>
                     @endguest
@@ -79,9 +79,9 @@
                         </li>
                     </ul>
                 </div>
-                @guest
+                @guest('website')
                     <div class="navbar-register">
-                        <a href="sgin-in.html" class="main-font">{{ __('messages.create_new_account') }}</a>
+                        <a href={{ route('website.register') }} class="main-font">{{ __('messages.create_new_account') }}</a>
                         <a href={{ route('website.login') }} class="main-font btn">{{ __('messages.login') }}</a>
                     </div>
                 @endguest

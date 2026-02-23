@@ -465,9 +465,17 @@ footer .copy-right .copy-right-social svg {
   font-size: 20px;
   font-weight: 400;
   &:hover {
-    background: #3ab54a;
-    color: var(--second-font-color);
+    background: #0000;
+    color: var(--forth-font-color);
   }
+}
+
+.login-button a {
+  background: #3ab54a;
+  color: var(--second-font-color);
+  padding: 20px 150px;
+  font-size: 20px;
+  font-weight: 400;
 }
 /* End Sgin Form Section */
 
@@ -477,9 +485,16 @@ footer .copy-right .copy-right-social svg {
   text-decoration: none;
 }
 
-.sgin-form form button:nth-child(2) {
-  background: var(--background-color) !important;
-  padding: 20px 100px !important;
+.sgin-form form .login-button a {
+  background: var(--background-color);
+  padding: 20px 150px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--second-font-color);
+  &:hover {
+    background: #0000;
+    color: var(--forth-font-color);
+  }
 }
 
 .remember-me{

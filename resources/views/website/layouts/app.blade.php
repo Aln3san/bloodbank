@@ -44,6 +44,7 @@
     <script src={{ asset('website/js/all.min.js') }}></script>
     <!-- Botstrap Js -->
     <script src={{ asset('website/js/bootstrap.bundle.min.js') }}></script>
+    @stack('scripts')
 </body>
 
 </html>
