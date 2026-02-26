@@ -12,6 +12,26 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        return $request->expectsJson() ? null : route('login');
+        if ($request->expectsJson()) {
+            return null;
+        }
+
+        // If the current route is part of the website route group (named with "website.")
+        // redirect to the website login route so unauthenticated website users land
+        // on the site login page instead of the admin/login route.
+        $route = $request->route();
+        $routeName = $route ? $route->getName() : null;
+
+        if ($routeName && str_starts_with($routeName, 'website.')) {
+            return route('website.login');
+        }
+
+        // If the URL is under admin prefix, keep default admin login route
+        if ($request->is('admin/*') or $request->is('admin')) {
+            return route('login');
+        }
+
+        // Fallback to website login for other web routes
+        return route('website.login');
     }
 }

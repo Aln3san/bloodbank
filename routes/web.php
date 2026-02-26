@@ -10,11 +10,11 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DonationRequestController as AdminDonationRequestController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\DonationRequestController;
 use App\Http\Controllers\Admin\SettingAppController;
 use App\Http\Controllers\Website\Auth\LoginController;
 use App\Http\Controllers\Website\Auth\ProfileController;
 use App\Http\Controllers\Website\Auth\RegisterController;
+use App\Http\Controllers\Website\DonationController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\PostController as WebsitePostController;
 use Illuminate\Support\Facades\Route;
@@ -52,12 +52,12 @@ Route::group(['as' => 'website.'], function () {
     Route::post('login', [LoginController::class, 'login'])->name('login.post');
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
     // Route::get('/', [WebsitePostController::class, 'posts'])->name('post');
-    Route::group(['prefix' => 'auth:website'], function () {
+    Route::group(['middleware' => 'auth:website'], function () {
         // my favourite
         // profile
         Route::resource('profile', ProfileController::class)->only(['edit', 'update']);
-        // change password
-        // create donation request
+        // donation request
+        Route::resource('donations', DonationController::class);
     });
 });
 
@@ -75,7 +75,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('categories', CategoryController::class);
         Route::resource('posts', PostController::class);
         Route::resource('contacts', ContactController::class);
-        Route::resource('donations', DonationRequestController::class);
+        Route::resource('donations', AdminDonationRequestController::class);
         Route::resource('settings', SettingAppController::class);
     });
 });

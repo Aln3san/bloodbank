@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href={{ asset('website/css/all.min.css') }} />
+    <link rel="stylesheet" href='{{ asset('website/css/all.min.css') }}' />
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href={{ asset('website/css/owl.carousel.min.css') }} />
-    <link rel="stylesheet" href={{ asset('website/css/owl.theme.default.min.css') }} />
+    <link rel="stylesheet" href='{{ asset('website/css/owl.carousel.min.css') }}' />
+    <link rel="stylesheet" href='{{ asset('website/css/owl.theme.default.min.css') }}' />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href={{ asset('website/css/bootstrap.rtl.min.css') }} />
+    <link rel="stylesheet" href='{{ asset('website/css/bootstrap.rtl.min.css') }}' />
     <!-- Style CSS -->
     {{-- <link rel="stylesheet" href={{ asset('website/css/style.css') }} /> --}}
     <link rel="stylesheet" href="{{ asset(app()->getLocale() == 'en' ? 'website/css/style.css' : 'website/css/style-rtl.css') }}">
-    <link rel="stylesheet" href={{ asset('website/css/responsive.css') }} />
+    <link rel="stylesheet" href='{{ asset('website/css/responsive.css') }}' />
     <title>{{ __('messages.blood_bank') }}</title>
 </head>
 
-<body>
+<body class="{{ $bodyClass ?? '' }}">
     <!-- Start Sup Navbar Section -->
     @include('website.layouts.sections._sup_navbar')
     <!-- End Sup Navbar Section -->

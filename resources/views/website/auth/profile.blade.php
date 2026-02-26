@@ -1,4 +1,6 @@
-@extends('website.layouts.app')
+@extends('website.layouts.app', [
+    'bodyClass' => 'sgin-in-body'
+])
 
 @section('content')
     <!-- Start Sgin Form Section -->

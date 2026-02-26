@@ -126,7 +126,7 @@
 .header {
   /* height: 70vh; */
   padding: 200px 0;
-  background-image: url("../imgs/header.jpg");
+  background-image: url("../imgs/header1-ltr.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -169,7 +169,7 @@
 
 /* Start About Us Seciton */
 .about-us {
-  background-image: url("../imgs/about2.png");
+  background-image: url("../imgs/about2-ltr.png");
   background-size: cover;
   background-repeat: no-repeat;
   /* height: 50vh; */
@@ -309,7 +309,7 @@
 
 /* Start Call Us Section */
 .call-us {
-  background-image: url("../imgs/call.jpg");
+  background-image: url("../imgs/call-ltr.jpg");
   background-size: cover;
   padding: 100px 0;
   text-align: center;
@@ -659,18 +659,24 @@ footer .copy-right .copy-right-social svg {
 
 /* ========== Donation Request Page ========== */
 .donation-request .pagination {
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center;
+  align-items: center;
 }
 
-.donation-request .pagination .page-item a {
-  color: var(--main-font-color) !important;
+.donation-request .pagination .page-link {
+  color: var(--main-font-color);
   border-radius: 2px;
   padding: 13px 22px;
-  &:hover {
-    background: var(--background-color);
-    color: var(--second-font-color) !important;
-  }
+}
+
+.donation-request .pagination .page-link:hover {
+  background: var(--background-color);
+  color: var(--second-font-color);
+}
+
+.donation-request .pagination .page-item.active .page-link {
+  background: var(--background-color);
+  color: var(--second-font-color);
 }
 
 /* ========== One Donation Request Details Page ========== */

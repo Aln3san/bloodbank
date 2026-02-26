@@ -191,5 +191,12 @@ return [
     'date_of_birth' => 'Date of Birth',
     'last_donation_date' => 'Last Donation Date',
     'register' => 'Register',
-    'password_confirmation' => 'Confirm Password'
+    'password_confirmation' => 'Confirm Password',
+    'select_city' => 'Select City',
+    'select_blood_type' => 'Select Blood Type',
+    'donation_request' => 'Donation Request',
+    'location' => 'Location',
+    'bags_number' => 'Bags Number',
+    'age' => 'Age',
+    'send' => 'Send'
 ];

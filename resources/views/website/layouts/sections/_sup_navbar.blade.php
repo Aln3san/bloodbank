@@ -28,7 +28,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href={{ route('website.home') }}>
                                     <div class="d-flex justify-content-start align-items-center">
                                         <i class="fa-solid fa-house"></i>
                                         <p class="mt-3 ms-2">{{ __('messages.home') }}</p>

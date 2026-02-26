@@ -188,5 +188,12 @@ return [
 	'confirm_password' => 'تأكيد كلمة المرور',
 	'date_of_birth' => 'تاريخ الميلاد',
 	'last_donation_date' => 'تاريخ آخر تبرع',
-	'register' => 'إنشاء حساب'
+	'register' => 'إنشاء حساب',
+	'select_city' => 'اختر المدينة',
+    'select_blood_type' => 'اختر فصيلة الدم',
+	'donation_request' => 'طلب تبرع',
+	'location' => 'الموقع',
+	'bags_number' => 'عدد الأكياس',
+	'age' => 'العمر',
+	'send' => 'إرسال'
 ];
