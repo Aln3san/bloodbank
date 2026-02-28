@@ -195,5 +195,9 @@ return [
 	'location' => 'الموقع',
 	'bags_number' => 'عدد الأكياس',
 	'age' => 'العمر',
-	'send' => 'إرسال'
+	'send' => 'إرسال',
+	'hospital_address' => 'عنوان المستشفى',
+	'required_bags' => 'عدد الأكياس المطلوبة',
+	'bags' => 'الأكياس',
+	'related_articles' => 'مقالات ذات صلة',
 ];

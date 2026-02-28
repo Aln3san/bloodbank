@@ -4,7 +4,13 @@
 
 
 @section('content')
-
+    <!-- Start Header Page Section -->
+    <section class="header-page container border my-5 p-3">
+        <span class="main-font">{{ __('messages.home') }}</span>
+        <span>/</span>
+        <span class="main-font">{{ __('messages.donation_request') }}</span>
+    </section>
+    <!-- End Header Page Section -->
     @if ($donations->isNotEmpty())
 
         @if (app()->getLocale() == 'en')
@@ -18,14 +24,17 @@
                         <form action="{{ url()->current() }}" method="get">
                             <select class="form-control rounded-pill my-2 py-2" name="blood_type" id="blood-type">
                                 <option value="">{{ __('messages.select_blood_type') ?? 'اختر فصيلة الدم' }}</option>
-                                @foreach($blood_types as $bt)
-                                    <option value="{{ $bt->id }}" {{ request('blood_type') == $bt->id ? 'selected' : '' }}>{{ $bt->name }}</option>
+                                @foreach ($blood_types as $bt)
+                                    <option value="{{ $bt->id }}"
+                                        {{ request('blood_type') == $bt->id ? 'selected' : '' }}>{{ $bt->name }}
+                                    </option>
                                 @endforeach
                             </select>
                             <select class="form-control rounded-pill my-2 py-2" name="city" id="city">
-                                <option value="">{{ __('messages.select_city')}}</option>
-                                @foreach($cities as $c)
-                                    <option value="{{ $c->id }}" {{ request('city') == $c->id ? 'selected' : '' }}>{{ $c->name }}</option>
+                                <option value="">{{ __('messages.select_city') }}</option>
+                                @foreach ($cities as $c)
+                                    <option value="{{ $c->id }}" {{ request('city') == $c->id ? 'selected' : '' }}>
+                                        {{ $c->name }}</option>
                                 @endforeach
                             </select>
 
@@ -78,14 +87,17 @@
                         <form action="{{ url()->current() }}" method="get">
                             <select class="form-control rounded-pill my-2 py-2" name="blood_type" id="blood-type">
                                 <option value="">{{ __('messages.select_blood_type') ?? 'اختر فصيلة الدم' }}</option>
-                                @foreach($blood_types as $bt)
-                                    <option value="{{ $bt->id }}" {{ request('blood_type') == $bt->id ? 'selected' : '' }}>{{ $bt->name }}</option>
+                                @foreach ($blood_types as $bt)
+                                    <option value="{{ $bt->id }}"
+                                        {{ request('blood_type') == $bt->id ? 'selected' : '' }}>{{ $bt->name }}
+                                    </option>
                                 @endforeach
                             </select>
                             <select class="form-control rounded-pill my-2 py-2" name="city" id="city">
                                 <option value="">{{ __('messages.select_city') ?? 'اختر المدينه' }}</option>
-                                @foreach($cities as $c)
-                                    <option value="{{ $c->id }}" {{ request('city') == $c->id ? 'selected' : '' }}>{{ $c->name }}</option>
+                                @foreach ($cities as $c)
+                                    <option value="{{ $c->id }}" {{ request('city') == $c->id ? 'selected' : '' }}>
+                                        {{ $c->name }}</option>
                                 @endforeach
                             </select>
 
@@ -116,7 +128,7 @@
                                     </div>
                                 </div>
                                 <div class="d-inline-block">
-                                    <a href="{{ url('donation-requests/' . $donation->id) }}"
+                                    <a href="{{ route('website.donations.show', $donation->id) }}"
                                         class="donation-request-details btn main-font">{{ __('messages.details') }}</a>
                                 </div>
                             </div>
@@ -130,5 +142,5 @@
         <p class="text-center">{{ __('messages.no_donations') ?? 'No donation requests.' }}</p>
     @endif
 
-    
+
 @endsection

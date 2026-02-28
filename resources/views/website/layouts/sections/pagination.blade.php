@@ -2,17 +2,21 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
 
+        @php
+            $isArabic = app()->getLocale() == 'ar';
+        @endphp
+
         {{-- Previous --}}
         @if ($paginator->onFirstPage())
             <li class="page-item disabled mx-1">
                 <span class="page-link">
-                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid {{ $isArabic ? 'fa-angle-right' : 'fa-angle-left' }}"></i>
                 </span>
             </li>
         @else
             <li class="page-item mx-1">
                 <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid {{ $isArabic ? 'fa-angle-right' : 'fa-angle-left' }}"></i>
                 </a>
             </li>
         @endif
@@ -46,13 +50,13 @@
         @if ($paginator->hasMorePages())
             <li class="page-item mx-1">
                 <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">
-                    <i class="fa-solid fa-angle-left"></i>
+                    <i class="fa-solid {{ $isArabic ? 'fa-angle-left' : 'fa-angle-right' }}"></i>
                 </a>
             </li>
         @else
             <li class="page-item disabled mx-1">
                 <span class="page-link">
-                    <i class="fa-solid fa-angle-left"></i>
+                    <i class="fa-solid {{ $isArabic ? 'fa-angle-left' : 'fa-angle-right' }}"></i>
                 </span>
             </li>
         @endif

@@ -15,6 +15,7 @@ use App\Http\Controllers\Website\Auth\LoginController;
 use App\Http\Controllers\Website\Auth\ProfileController;
 use App\Http\Controllers\Website\Auth\RegisterController;
 use App\Http\Controllers\Website\DonationController;
+use App\Http\Controllers\Website\FavoriteController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\PostController as WebsitePostController;
 use Illuminate\Support\Facades\Route;
@@ -51,9 +52,12 @@ Route::group(['as' => 'website.'], function () {
     Route::get('login', [LoginController::class, 'loginView'])->name('login');
     Route::post('login', [LoginController::class, 'login'])->name('login.post');
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
-    // Route::get('/', [WebsitePostController::class, 'posts'])->name('post');
     Route::group(['middleware' => 'auth:website'], function () {
+        // posts
+        Route::resource('posts', WebsitePostController::class)->only(['index', 'show']);
         // my favourite
+        Route::get('/favorites', [FavoriteController::class, 'index'])->middleware('auth:website')->name('favorites.index');
+        Route::post('/posts/{post}/favorite', [FavoriteController::class, 'toggle'])->middleware('auth:website')->name('posts.favorite');
         // profile
         Route::resource('profile', ProfileController::class)->only(['edit', 'update']);
         // donation request

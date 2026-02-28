@@ -1,8 +1,15 @@
 @extends('website.layouts.app', [
-    'bodyClass' => 'sgin-in-body'
+    'bodyClass' => 'sgin-in-body',
 ])
 
 @section('content')
+    <!-- Start Header Page Section -->
+    <section class="header-page container border my-5 p-3">
+        <span class="main-font">{{ __('messages.home') }}</span>
+        <span>/</span>
+        <span class="main-font">{{ __('messages.profile') }}</span>
+    </section>
+    <!-- End Header Page Section -->
     <!-- Start Sgin Form Section -->
     <section class="sgin-form container border mb-5">
         <form action="{{ route('website.profile.update', auth('website')->user()->id) }}" method="post">

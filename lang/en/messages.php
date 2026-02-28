@@ -198,5 +198,9 @@ return [
     'location' => 'Location',
     'bags_number' => 'Bags Number',
     'age' => 'Age',
-    'send' => 'Send'
+    'send' => 'Send',
+    'hospital_address' => 'Hospital Address',
+    'required_bags' => 'Required Bags',
+    'bags' => 'Bags',
+    'related_articles' => 'Related Articles'
 ];

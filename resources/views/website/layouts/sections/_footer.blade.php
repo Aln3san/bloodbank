@@ -16,8 +16,8 @@
                     <ul>
                         <li class="main-font active"><a href="{{ route('website.home') }}">{{ __('messages.home') }}</a></li>
                         <li class="main-font"><a href="#">{{ __('messages.about_blood_bank') }}</a></li>
-                        <li class="main-font"><a href="#">{{ __('messages.articles') }}</a></li>
-                        <li class="main-font"><a href="#">{{ __('messages.donation_requests') }}</a></li>
+                        <li class="main-font"><a href="{{ route('website.posts.index') }}">{{ __('messages.articles') }}</a></li>
+                        <li class="main-font"><a href="{{ route('website.donations.index') }}">{{ __('messages.donation_requests') }}</a></li>
                         <li class="main-font"><a href="#">{{ __('messages.about_us') }}</a></li>
                     </ul>
                 </div>

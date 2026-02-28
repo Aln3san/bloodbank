@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="{{ asset('website/css/leaflet.css') }}" />
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href='{{ asset('website/css/all.min.css') }}' />
     <!-- Owl Carousel CSS -->
@@ -35,6 +37,8 @@
     @include('website.layouts.sections._footer')
     <!-- End Footer Section -->
 
+    <!-- Leaflet JS -->
+    <script src="{{ asset('website/js/leaflet.js') }}"></script>
     <!-- Jquery Js -->
     <script src={{ asset('website/js/jquery.min.js.js') }}></script>
     <!-- Owl Carousel Js -->

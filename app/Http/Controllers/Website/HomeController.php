@@ -31,6 +31,7 @@ class HomeController extends Controller
 
         $bloodTypes = BloodType::all();
         $cities = City::all();
+        
         $client = Client::find(auth('website')->id());
 
         return view('website.home', compact('posts', 'donations', 'bloodTypes', 'cities', 'client'));

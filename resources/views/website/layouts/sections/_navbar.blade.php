@@ -25,23 +25,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.contact_us') }}</a>
+                            <a class="nav-link main-font {{ request()->is('contact-us*') ? 'active' : '' }}" href="#">{{ __('messages.contact_us') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="about-us.html">{{ __('messages.about_us') }}</a>
+                            <a class="nav-link main-font {{ request()->is('about-us*') ? 'active' : '' }}" href="about-us.html" @if(request()->is('about-us*')) aria-current="page" @endif>{{ __('messages.about_us') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href={{ route('website.donations.index') }}>{{ __('messages.donations') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.donations.index') ? 'active' : '' }}" href={{ route('website.donations.index') }} @if(request()->routeIs('website.donations.index')) aria-current="page" @endif>{{ __('messages.donations') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.articles') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.posts.index') ? 'active' : '' }}" href="{{ route('website.posts.index') }}" @if(request()->routeIs('website.posts.index')) aria-current="page" @endif>{{ __('messages.articles') }}</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.about_blood_bank') }}</a>
+                            <a class="nav-link main-font {{ request()->is('about-blood-bank*') ? 'active' : '' }}" href="#">{{ __('messages.about_blood_bank') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font active" aria-current="page"
-                                href={{ route('website.home') }}>{{ __('messages.home') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.home') ? 'active' : '' }}" @if(request()->routeIs('website.home')) aria-current="page" @endif href={{ route('website.home') }}>{{ __('messages.home') }}</a>
                         </li>
                     </ul>
 
@@ -59,23 +58,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link main-font active" aria-current="page"
-                                href={{ route('website.home') }}>{{ __('messages.home') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.home') ? 'active' : '' }}" @if(request()->routeIs('website.home')) aria-current="page" @endif href={{ route('website.home') }}>{{ __('messages.home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.about_blood_bank') }}</a>
+                            <a class="nav-link main-font {{ request()->is('about-blood-bank*') ? 'active' : '' }}" href="#">{{ __('messages.about_blood_bank') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.articles') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.posts.index') ? 'active' : '' }}" href="{{ route('website.posts.index') }}" @if(request()->routeIs('website.posts.index')) aria-current="page" @endif>{{ __('messages.articles') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href={{ route('website.donations.index') }}>{{ __('messages.donations') }}</a>
+                            <a class="nav-link main-font {{ request()->routeIs('website.donations.index') ? 'active' : '' }}" href={{ route('website.donations.index') }} @if(request()->routeIs('website.donations.index')) aria-current="page" @endif>{{ __('messages.donations') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="about-us.html">{{ __('messages.about_us') }}</a>
+                            <a class="nav-link main-font {{ request()->is('about-us*') ? 'active' : '' }}" href="about-us.html" @if(request()->is('about-us*')) aria-current="page" @endif>{{ __('messages.about_us') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-font" href="#">{{ __('messages.contact_us') }}</a>
+                            <a class="nav-link main-font {{ request()->is('contact-us*') ? 'active' : '' }}" href="#">{{ __('messages.contact_us') }}</a>
                         </li>
                     </ul>
                 </div>

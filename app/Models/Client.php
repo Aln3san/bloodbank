@@ -38,7 +38,8 @@ class Client extends Authenticatable
 
   public function posts()
   {
-    return $this->belongsToMany(Post::class);
+    return $this->belongsToMany(Post::class, 'client_post')
+      ->withTimestamps();
   }
 
   public function contactMessages()

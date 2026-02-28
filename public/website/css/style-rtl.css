@@ -693,7 +693,7 @@ footer .copy-right .copy-right-social svg {
   background: var(--second-background-color);
   display: inline-block;
   width: 50%;
-  padding: 20px 13px 20px 0px;
+  padding: 20px 13px 20px 0;
   font-weight: 500;
 }
 
@@ -717,7 +717,7 @@ footer .copy-right .copy-right-social svg {
   font-weight: 400;
 }
 
-.donation-request-details .donation-request-map iframe{
+.donation-request-details .donation-request-map .map{
   height: 100%;
 }
 /* End Donation Request Details */

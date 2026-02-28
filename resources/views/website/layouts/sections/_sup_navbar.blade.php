@@ -61,7 +61,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('website.favorites.index') }}">
                                     <div class="d-flex justify-content-start align-items-center">
                                         <i class="fa-regular fa-heart"></i>
                                         <p class="mt-3 ms-2">{{ __('messages.favorites') }}</p>

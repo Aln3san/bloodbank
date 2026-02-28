@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="d-inline-block">
-                                <a href="{{ url('donation-requests/' . $donation->id) }}"
+                                <a href="{{ route('website.donations.show', $donation->id) }}"
                                     class="donation-request-details btn main-font">{{ __('messages.details') }}</a>
                             </div>
 
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="d-inline-block">
-                                <a href="{{ url('donation-requests/' . $donation->id) }}"
+                                <a href="{{ route('website.donations.show', $donation->id) }}"
                                     class="donation-request-details btn main-font">{{ __('messages.details') }}</a>
                             </div>
                         </div>
