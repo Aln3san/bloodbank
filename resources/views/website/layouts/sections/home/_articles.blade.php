@@ -10,6 +10,7 @@
                 @foreach ($posts as $post)
                     <div class="card rounded-0">
 
+                        @auth('website')
                         <!-- Favorite Heart -->
                         <form class="favorite-form d-inline-block" data-post-id="{{ $post->id }}"
                             action="{{ route('website.posts.favorite', $post->id) }}" method="POST">
@@ -19,6 +20,7 @@
                                     class="{{ auth('website')->check() && auth('website')->user()->posts->contains($post->id) ? 'fas' : 'far' }} fa-heart"></i>
                             </button>
                         </form>
+                        @endauth
 
                         <!-- Post Image -->
                         <img src="{{ $post->photo_url }}" class="card-img-top w-50 d-block mx-auto"

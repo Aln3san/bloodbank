@@ -83,7 +83,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('website.contact') }}">
                                     <div class="d-flex justify-content-start align-items-center">
                                         <i class="fa-solid fa-phone-flip"></i>
                                         <p class="mt-3 ms-2">{{ __('messages.contact_us') }}</p>

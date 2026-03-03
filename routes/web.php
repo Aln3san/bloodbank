@@ -16,6 +16,7 @@ use App\Http\Controllers\Website\Auth\ProfileController;
 use App\Http\Controllers\Website\Auth\RegisterController;
 use App\Http\Controllers\Website\DonationController;
 use App\Http\Controllers\Website\FavoriteController;
+use App\Http\Controllers\Website\GeneralController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\PostController as WebsitePostController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,12 @@ Route::get('lang/{locale}', function ($locale) {
 // Website Routes
 Route::group(['as' => 'website.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    // General Routes
+    Route::get('about', [GeneralController::class, 'about'])->name('about');
+    Route::get('contact', [GeneralController::class, 'contact'])->name('contact');
+    // contact store will be available only for authenticated website clients
+    Route::post('contact', [GeneralController::class, 'contactStore'])->name('contact.store')->middleware('auth:website');
+    // Auth Routes
     Route::get('register', [RegisterController::class, 'registerView'])->name('register');
     Route::post('register', [RegisterController::class, 'register'])->name('register.post');
     Route::get('login', [LoginController::class, 'loginView'])->name('login');

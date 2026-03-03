@@ -44,7 +44,7 @@
                                         <td>{{ $loop->iteration }}.</td>
                                         <td>{{ $city->name }}</td>
                                         <td>
-                                            {{ $city->governorate_id }}
+                                            {{ $city->governorate_id}}
                                         </td>
                                         <td class="d-flex">
                                             <a href={{ url(route('cities.edit', $city->id)) }}

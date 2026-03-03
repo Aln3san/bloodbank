@@ -35,6 +35,7 @@
                                     <th style="width: 10px">#</th>
                                     <th>{{ __('messages.name') }}</th>
                                     <th>{{ __('messages.cities_count') }}</th>
+                                    <th>{{ __('messages.cities') }}</th>
                                     <th style="width: 40px">{{ __('messages.actions') }}</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,9 @@
                                         <td>{{ $loop->iteration }}.</td>
                                         <td>{{ $governorate->name }}</td>
                                         <td>
+                                            {{ $governorate->cities_count }}
+                                        </td>
+                                         <td>
                                             {{ $governorate->cities_count }}
                                         </td>
                                         <td class="d-flex">

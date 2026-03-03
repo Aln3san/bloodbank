@@ -13,7 +13,7 @@
                             {{ __('messages.example_text_3') }}
                         </p>
                         <div class="d-flex justify-content-left">
-                            <a href="#" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
+                            <a href="{{ route('website.about') }}" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
                         </div>
                     </div>
                     <div>
@@ -26,7 +26,7 @@
                             {{ __('messages.example_text_3') }}
                         </p>
                         <div class="d-flex justify-content-left">
-                            <a href="#" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
+                            <a href="{{ route('website.about') }}" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
                         </div>
                     </div>
                     <div>
@@ -39,7 +39,7 @@
                             {{ __('messages.example_text_3') }}
                         </p>
                         <div class="d-flex justify-content-left">
-                            <a href="#" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
+                            <a href="{{ route('website.about') }}" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
                         </div>
                     </div>
                     <div>
@@ -52,7 +52,7 @@
                             {{ __('messages.example_text_3') }}
                         </p>
                         <div class="d-flex justify-content-left">
-                            <a href="#" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
+                            <a href="{{ route('website.about') }}" class="read-more btn rounded-0">{{ __('messages.more') }}</a>
                         </div>
                     </div>
                 </div>

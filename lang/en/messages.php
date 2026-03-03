@@ -202,5 +202,7 @@ return [
     'hospital_address' => 'Hospital Address',
     'required_bags' => 'Required Bags',
     'bags' => 'Bags',
-    'related_articles' => 'Related Articles'
+    'related_articles' => 'Related Articles',
+    'contact_saved' => 'Your message was sent successfully.',
+    'message_title' => 'Message Title'
 ];

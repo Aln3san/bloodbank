@@ -200,4 +200,6 @@ return [
 	'required_bags' => 'عدد الأكياس المطلوبة',
 	'bags' => 'الأكياس',
 	'related_articles' => 'مقالات ذات صلة',
+	'contact_saved' => 'تم إرسال رسالتك بنجاح.',
+	'message_title' => 'عنوان الرسالة'
 ];
