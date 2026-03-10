@@ -68,41 +68,6 @@ class ClientController extends Controller
         return redirect()->route('clients.index')->with('success', __("messages.create_client"));
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        $client = Client::findOrFail($id);
-        $cities = City::all();
-        $blood_types = BloodType::all();
-        return view('admin.clients.edit', compact('client', 'cities', 'blood_types'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(ClientRequest $request, string $id)
-    {
-        $client = Client::findOrFail($id);
-        $data = $request->validated();
-        // if password provided, hash it; otherwise remove so it won't be wiped
-        if (!empty($data['password'])) {
-            $data['password'] = Hash::make($data['password']);
-        } else {
-            unset($data['password']);
-            unset($data['password_confirmation']);
-        }
-        // set governorate_id from city if city changed
-        if (!empty($data['city_id'])) {
-            $city = City::find($data['city_id']);
-            if ($city) $data['governorate_id'] = $city->governorate_id;
-        }
-        $client->update($data);
-        return redirect()->route('clients.index')->with('success', __("messages.success"));
-    }
-
     /**
      * Remove the specified resource from storage.
      */

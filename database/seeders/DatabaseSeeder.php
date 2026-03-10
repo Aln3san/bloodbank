@@ -40,8 +40,8 @@ class DatabaseSeeder extends Seeder
       // DonationRequestSeeder::class,
       // FavouritesSeeder::class,
       // NotificationSettingsSeeder::class,
-      // UserSeeder::class,
-      PermissionSeeder::class,
+      UserSeeder::class,
+      // PermissionSeeder::class,
     ]);
   }
 }

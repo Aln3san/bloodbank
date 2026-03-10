@@ -87,8 +87,6 @@
                                         <td>{{ $client->date_of_birth }}</td>
                                         <td>{{ $client->last_donation_date }}</td>
                                         <td class="d-flex">
-                                            <a href={{ url(route('clients.edit', $client->id)) }}
-                                                class="btn btn-primary mx-1"><i class="far fa-edit"></i></a>
                                             <button type="button" data-id="tr_{{ $client->id }}"
                                                 data-url={{ url(route('clients.destroy', $client->id)) }}
                                                 class="btn delete-item btn-danger mx-1"><i
