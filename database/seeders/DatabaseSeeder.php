@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
       // ContactSeeder::class,
       // NotificationSeeder::class,
       // DonationRequestSeeder::class,
-      // FavouritesSeeder::class,
+      FavouritesSeeder::class,
       // NotificationSettingsSeeder::class,
       UserSeeder::class,
       // PermissionSeeder::class,

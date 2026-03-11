@@ -53,12 +53,11 @@
                                     <td>{{ $donation->hospital_name }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{{ __('messages.latitude') }}</th>
-                                    <td>{{ $donation->latitude }}</td>
-                                </tr>
-                                <tr>
-                                    <th>{{ __('messages.longitude') }}</th>
-                                    <td>{{ $donation->longitude }}</td>
+                                    <th>{{ __('messages.map') }}</th>
+                                    <td>
+                                        <div id="map-{{ $donation->id }}"
+                                            style="height: 200px; width: 250px; border-radius: 8px;"></div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('messages.city_name') }}</th>
@@ -79,7 +78,8 @@
                             </tbody>
                         </table>
                         <div class="mt-3 text-end">
-                            <a href="{{ route('donations.index') }}" class="btn btn-secondary"><i class="fas fa-home"></i></a>
+                            <a href="{{ route('donations.index') }}" class="btn btn-secondary"><i
+                                    class="fas fa-home"></i></a>
                         </div>
                     </div>
                 </div>
@@ -88,4 +88,27 @@
     </div>
 
     @include('admin.layout.partial._alerts')
+    @push('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // تحديد الإحداثيات من السيرفر
+                var lat = {{ $donation->latitude }};
+                var lng = {{ $donation->longitude }};
+                var mapId = 'map-{{ $donation->id }}';
+
+                // إنشاء الخريطة
+                var map = L.map(mapId).setView([lat, lng], 13);
+
+                // إضافة شكل الخريطة (OpenStreetMap)
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap'
+                }).addTo(map);
+
+                // إضافة علامة (Marker) على الموقع
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup('blood donation location')
+                    .openPopup();
+            });
+        </script>
+    @endpush
 @endsection

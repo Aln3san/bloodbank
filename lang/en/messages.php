@@ -133,6 +133,8 @@ return [
     'filter' => 'Filter',
     'clear' => 'Clear',
     'donation_details' => 'Donation Details',
+    'view_on_map' => 'View on Map',
+    'map' => 'Map',
 
     // settings
     'settings' => 'Settings',
@@ -204,5 +206,5 @@ return [
     'bags' => 'Bags',
     'related_articles' => 'Related Articles',
     'contact_saved' => 'Your message was sent successfully.',
-    'message_title' => 'Message Title'
+    'message_title' => 'Message Title',
 ];

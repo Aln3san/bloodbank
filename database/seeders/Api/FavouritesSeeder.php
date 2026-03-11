@@ -26,10 +26,6 @@ class FavouritesSeeder extends Seeder
         'client_id' => 1,
         'post_id' => 3,
       ],
-      [
-        'client_id' => 1,
-        'post_id' => 4,
-      ],
     ]);
   }
 }

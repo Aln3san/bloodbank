@@ -133,6 +133,8 @@ return [
 	'filter' => 'تصفية',
 	'clear' => 'مسح',
 	'donation_details' => 'تفاصيل الطلب',
+	'view_on_map' => 'عرض على الخريطة',
+	'map' => 'الخريطة',
 
 	// settings
 	'settings' => 'الإعدادات',
@@ -201,5 +203,5 @@ return [
 	'bags' => 'الأكياس',
 	'related_articles' => 'مقالات ذات صلة',
 	'contact_saved' => 'تم إرسال رسالتك بنجاح.',
-	'message_title' => 'عنوان الرسالة'
+	'message_title' => 'عنوان الرسالة',
 ];

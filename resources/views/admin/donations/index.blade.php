@@ -67,8 +67,7 @@
                                     <th>{{ __('messages.blood_type') }}</th>
                                     <th>{{ __('messages.bags_naumber') }}</th>
                                     <th>{{ __('messages.hospital_name') }}</th>
-                                    <th>{{ __('messages.latitude') }}</th>
-                                    <th>{{ __('messages.longitude') }}</th>
+                                    <th>{{ __('messages.map') }}</th>
                                     <th>{{ __('messages.city_name') }}</th>
                                     <th>{{ __('messages.notes') }}</th>
                                     <th>{{ __('messages.created_at') }}</th>
@@ -86,8 +85,7 @@
                                             <td>{{ $donation->bloodType->name }}</td>
                                             <td>{{ $donation->bags_number }}</td>
                                             <td>{{ $donation->hospital_name }}</td>
-                                            <td>{{ $donation->latitude }}</td>
-                                            <td>{{ $donation->longitude }}</td>
+                                           <td><a href="https://www.google.com/maps?q={{ $donation->latitude }},{{ $donation->longitude }}" target="_blank" class="btn btn-sm btn-info">{{ __('messages.view_on_map') }}</a></td>
                                             <td>{{ $donation->city->name }}</td>
                                             <td>{{ $donation->notes }}</td>
                                             <td>{{ $donation->created_at }}</td>

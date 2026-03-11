@@ -33,6 +33,7 @@ class PermissionSeeder extends Seeder
                 'read users',
                 'update users',
                 'delete users',
+                'create users'
             ],
 
             // Clients

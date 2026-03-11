@@ -62,6 +62,11 @@ class Client extends Authenticatable
     return $this->belongsToMany(Governorate::class);
   }
 
+  public function bloodTypes()
+  {
+    return $this->belongsToMany(BloodType::class, 'blood_type_client');
+  }
+
   /**
    * Specifies the user's FCM token
    *
